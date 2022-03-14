@@ -1,5 +1,4 @@
 <?php
-
 class HomeController extends AbstractController
 {
 
@@ -7,4 +6,3 @@ class HomeController extends AbstractController
     {
         $this->render('home/home');
     }
-}

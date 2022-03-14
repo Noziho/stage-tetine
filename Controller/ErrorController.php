@@ -1,5 +1,4 @@
 <?php
-
 class ErrorController extends AbstractController
 {
 
@@ -11,4 +10,3 @@ class ErrorController extends AbstractController
     public function error404($askPage) {
         $this->render('error/404');
     }
-}
