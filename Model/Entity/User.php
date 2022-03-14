@@ -8,6 +8,19 @@ class User extends AbstractEntity
     private string $lastname;
     private int $phone_number;
     private string $password;
+    private string $email;
+    private string $city;
+    private string $code_postal;
+    private string $address;
+    private Role $role;
+
+    /**
+     * @return Role
+     */
+    public function getRole(): Role
+    {
+        return $this->role;
+    }
 
     /**
      * @return int
@@ -44,10 +57,6 @@ class User extends AbstractEntity
         $this->password = $password;
         return $this;
     }
-    private string $email;
-    private string $city;
-    private string $code_postal;
-    private string $address;
 
     /**
      * @return string
@@ -154,6 +163,16 @@ class User extends AbstractEntity
     public function setAddress(string $address): self
     {
         $this->address = $address;
+        return $this;
+    }
+
+    /**
+     * @param Role $role
+     * @return User
+     */
+    public function setRole(Role $role): self
+    {
+        $this->role = $role;
         return $this;
     }
 }
