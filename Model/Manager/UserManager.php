@@ -4,6 +4,7 @@ namespace App\Model\Manager;
 
 use App\Model\Entity\User;
 use Connect;
+use DB_Connect;
 
 class UserManager extends AbstractManager
 {
@@ -15,7 +16,7 @@ class UserManager extends AbstractManager
     public static function getAll(): array
     {
         $users = [];
-        $result = Connect::dbConnect()->query("SELECT * FROM " . self::TABLE);
+        $result = DB_Connect::dbConnect()->query("SELECT * FROM " . self::TABLE);
 
         if($result) {
             foreach ($result->fetchAll() as $data) {
@@ -31,7 +32,7 @@ class UserManager extends AbstractManager
      */
     public static function getUserById(int $id): ?User
     {
-        $result = Connect::dbConnect()->query("SELECT * FROM " . self::TABLE . " WHERE id = $id");
+        $result = DB_Connect::dbConnect()->query("SELECT * FROM " . self::TABLE . " WHERE id = $id");
         return $result ? self::makeUser($result->fetch()) : null;
     }
 
@@ -61,7 +62,7 @@ class UserManager extends AbstractManager
      */
     public static function addUser(User &$user): bool
     {
-        $stmt = Connect::dbConnect()->prepare("
+        $stmt = DB_Connect::dbConnect()->prepare("
             INSERT INTO " . self::TABLE . " (email, firstname, lastname, password,phoneNumber,city,postalCode,address, role_fk) 
             VALUES (:email, :firstname, :lastname, :password, :phoneNumber, :city, :postalCode, :address, :role_fk)
         ");
@@ -77,7 +78,7 @@ class UserManager extends AbstractManager
         $stmt->bindValue(':role_fk',$user->getRole());
 
         $result = $stmt->execute();
-        $user->setId(Connect::dbConnect()->lastInsertId());
+        $user->setId(DB_Connect::dbConnect()->lastInsertId());
 
         return $result;
     }
@@ -98,7 +99,7 @@ class UserManager extends AbstractManager
          */
         public static function mailExists(string $mail): bool
     {
-        $result = Connect::dbConnect()->query("SELECT count(*) as cnt FROM " . self::TABLE . " WHERE email = \"$mail\"");
+        $result = DB_Connect::dbConnect()->query("SELECT count(*) as cnt FROM " . self::TABLE . " WHERE email = \"$mail\"");
         return $result ? $result->fetch()['cnt'] : 0;
     }
 
@@ -109,7 +110,7 @@ class UserManager extends AbstractManager
          */
         public static function deleteUser(User $user): bool {
         if(self::userExists($user->getId())) {
-            return Connect::dbConnect()->exec("
+            return DB_Connect::dbConnect()->exec("
             DELETE FROM " . self::TABLE . " WHERE id = {$user->getId()}
         ");
         }
@@ -122,7 +123,7 @@ class UserManager extends AbstractManager
          */
         public static function getUserByMail(string $mail): ?User
     {
-        $stmt = Connect::dbConnect()->prepare("SELECT * FROM " . self::TABLE . " WHERE email = :mail LIMIT 1");
+        $stmt = DB_Connect::dbConnect()->prepare("SELECT * FROM " . self::TABLE . " WHERE email = :mail LIMIT 1");
         $stmt->bindParam(':mail', $mail);
         return $stmt->execute() ? self::makeUser($stmt->fetch()) : null;
     }

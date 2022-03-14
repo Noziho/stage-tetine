@@ -7,6 +7,8 @@ class ErrorController extends AbstractController
         // TODO: Implement index() method.
     }
 
-    public function error404($askPage) {
+    public function error404($askPage)
+    {
         $this->render('error/404');
     }
+}
