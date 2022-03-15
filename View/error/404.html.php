@@ -1,0 +1,1 @@
+<h1>Erreur 404 la page <?= $askPage ?> n'a pas été trouver</h1>
