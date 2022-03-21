@@ -10,13 +10,21 @@ abstract class AbstractController
         require __DIR__. "/../View/base.html.php";
     }
 
-    public function formIssets (...$names): bool
+    public function formIsset (...$inputNames): bool
     {
-        foreach ($names as $name) {
+        foreach ($inputNames as $name) {
             if (!isset($_POST[$name])) {
                 return false;
             }
         }
         return true;
+    }
+
+    public function checkRange (string $value, int $min, int $max, string $redirect): void
+    {
+        if (strlen($value) < $min || strlen($value) > $max) {
+            header("Location: " . $redirect);
+            exit();
+        }
     }
 }
