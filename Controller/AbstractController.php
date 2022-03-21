@@ -9,4 +9,14 @@ abstract class AbstractController
         $html = ob_get_clean();
         require __DIR__. "/../View/base.html.php";
     }
+
+    public function formIssets (...$names): bool
+    {
+        foreach ($names as $name) {
+            if (!isset($_POST[$name])) {
+                return false;
+            }
+        }
+        return true;
+    }
 }

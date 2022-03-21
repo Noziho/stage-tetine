@@ -62,7 +62,7 @@ class UserManager extends AbstractManager
     public static function addUser(User &$user): bool
     {
         $stmt = DB_Connect::dbConnect()->prepare("
-            INSERT INTO " . self::TABLE . " (email, firstname, lastname, password,phoneNumber,city,postalCode,address, role_fk) 
+            INSERT INTO " . self::TABLE . " (email, firstname, lastname, password,phone_number,city,postal_code,adress, role_fk) 
             VALUES (:email, :firstname, :lastname, :password, :phoneNumber, :city, :postalCode, :address, :role_fk)
         ");
 

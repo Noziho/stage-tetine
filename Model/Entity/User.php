@@ -12,12 +12,12 @@ class User extends AbstractEntity
     private string $city;
     private string $code_postal;
     private string $address;
-    private Role $role;
+    private int $role;
 
     /**
-     * @return Role
+     * @return int
      */
-    public function getRole(): Role
+    public function getRole(): int
     {
         return $this->role;
     }
@@ -167,10 +167,10 @@ class User extends AbstractEntity
     }
 
     /**
-     * @param Role $role
+     * @param int $role
      * @return User
      */
-    public function setRole(Role $role): self
+    public function setRole(int $role): self
     {
         $this->role = $role;
         return $this;
