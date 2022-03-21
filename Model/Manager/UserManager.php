@@ -3,7 +3,6 @@
 namespace App\Model\Manager;
 
 use App\Model\Entity\User;
-use Connect;
 use DB_Connect;
 
 class UserManager extends AbstractManager
@@ -63,7 +62,7 @@ class UserManager extends AbstractManager
     public static function addUser(User &$user): bool
     {
         $stmt = DB_Connect::dbConnect()->prepare("
-            INSERT INTO " . self::TABLE . " (email, firstname, lastname, password,phoneNumber,city,postalCode,address, role_fk) 
+            INSERT INTO " . self::TABLE . " (email, firstname, lastname, password,phone_number,city,postal_code,adress, role_fk) 
             VALUES (:email, :firstname, :lastname, :password, :phoneNumber, :city, :postalCode, :address, :role_fk)
         ");
 
@@ -89,7 +88,7 @@ class UserManager extends AbstractManager
          */
         public static function userExists(int $id): bool
     {
-        $result = Connect::dbConnect()->query("SELECT count(*) as cnt FROM " . self::TABLE . " WHERE id = $id");
+        $result = DB_Connect::dbConnect()->query("SELECT count(*) as cnt FROM " . self::TABLE . " WHERE id = $id");
         return $result ? $result->fetch()['cnt'] : 0;
     }
 
