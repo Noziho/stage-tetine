@@ -3,7 +3,6 @@
 namespace App\Model\Manager;
 
 use App\Model\Entity\User;
-use Connect;
 use DB_Connect;
 
 class UserManager extends AbstractManager
@@ -89,7 +88,7 @@ class UserManager extends AbstractManager
          */
         public static function userExists(int $id): bool
     {
-        $result = Connect::dbConnect()->query("SELECT count(*) as cnt FROM " . self::TABLE . " WHERE id = $id");
+        $result = DB_Connect::dbConnect()->query("SELECT count(*) as cnt FROM " . self::TABLE . " WHERE id = $id");
         return $result ? $result->fetch()['cnt'] : 0;
     }
 
