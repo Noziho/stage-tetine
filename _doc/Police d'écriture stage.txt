@@ -1,0 +1,10 @@
+Ecriture 1: Amazone
+Ecriture 2: Comic Sans MS
+Ecriture 3: Fiolex Girls
+Ecriture 4:'Walt Disney Script v4.1'
+Ecriture 5: 'SF Action Man Bold'
+Ecriture 6: Segoe print
+Ecriture 7: Wrexham Script
+Ecriture 8: jester Regular
+Ecriture 9: The urban way
+Ecriture 10: Arial

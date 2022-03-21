@@ -10,9 +10,9 @@
 </head>
 <body>
 <header>
-    <a href="">Home</a>
+    <a href="/?c=home">Home</a>
     <div>
-        <span><a href="">Login</a>/<a href=>Inscription</a></span>
+        <span><a href="/?c=user">Login</a>/<a href="/?c=user">Inscription</a></span>
     </div>
 </header>
 

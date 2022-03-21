@@ -1,8 +1,12 @@
 <?php
-session_start();
+
+use App\Router;
 require __DIR__ . '/../includes.php';
+
+session_start();
+
 try {
-    Router::routeur();
+    Router::route();
 } catch (ReflectionException $e) {
     echo "La connexion a échoué";
 }
