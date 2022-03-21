@@ -1,1 +1,1 @@
-<h1>Erreur 404 la page demandé n'a pas été trouver</h1>
+<h1>Erreur 404 la page demandée n'a pas été trouvée</h1>
