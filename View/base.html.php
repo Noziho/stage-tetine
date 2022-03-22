@@ -12,7 +12,7 @@
 <header>
     <a href="/?c=home">Home</a>
     <div>
-        <span><a href="/?c=user">Login</a>/<a href="/?c=user">Inscription</a></span>
+        <span><a href="/?c=user&a=login">Login</a>/<a href="/?c=user">Inscription</a></span>
     </div>
 </header>
 

@@ -17,7 +17,7 @@ class UserManager extends AbstractManager
         $users = [];
         $result = DB_Connect::dbConnect()->query("SELECT * FROM " . self::TABLE);
 
-        if($result) {
+        if ($result) {
             foreach ($result->fetchAll() as $data) {
                 $users[] = self::makeUser($data);
             }
@@ -51,8 +51,7 @@ class UserManager extends AbstractManager
             ->setCity($data['city'])
             ->setCodePostal($data['postal_code'])
             ->setAddress($data['adress'])
-            ->setRole($data['role_fk'])
-            ;
+            ->setRole($data['role_fk']);
     }
 
     /**
@@ -74,7 +73,7 @@ class UserManager extends AbstractManager
         $stmt->bindValue(':city', $user->getCity());
         $stmt->bindValue(':postalCode', $user->getCodePostal());
         $stmt->bindValue(':address', $user->getAddress());
-        $stmt->bindValue(':role_fk',$user->getRole());
+        $stmt->bindValue(':role_fk', $user->getRole());
 
         $result = $stmt->execute();
         $user->setId(DB_Connect::dbConnect()->lastInsertId());
@@ -82,33 +81,74 @@ class UserManager extends AbstractManager
         return $result;
     }
 
-        /**
-         * @param int $id
-         * @return bool
-         */
-        public static function userExists(int $id): bool
+    public static function login(string $mail, string $password)
+    {
+        $stmt = DB_Connect::dbConnect()->prepare("
+            SELECT * FROM " . self::TABLE . " WHERE email = :mail
+        ");
+
+        $stmt->bindParam(':mail', $mail);
+
+
+        if ($stmt->execute()) {
+            $user = $stmt->fetch();
+            if (isset($user['password'])) {
+                if (password_verify($password, $user['password'])) {
+                    $userSession = (new User())
+                        ->setId($user['id'])
+                        ->setEmail($user['email'])
+                        ->setFirstname($user['firstname'])
+                        ->setLastname($user['lastname'])
+                        ->setAddress($user['adress'])
+                        ->setCity($user['city'])
+                        ->setCodePostal($user['postal_code'])
+                        ->setPhoneNumber($user['phone_number'])
+                        ;
+
+                    if (!isset($_SESSION['user'])) {
+                        $_SESSION['user'] = $userSession;
+                    }
+
+                    $_SESSION['id'] = $userSession->getId();
+                    header("Location: /?c=home&f=0");
+                } else {
+                    header("Location: /?c=user&a=login&f=10");
+                }
+            } else {
+                header("Location: /?c=user&a=login&f=12");
+            }
+        }
+    }
+
+
+    /**
+     * @param int $id
+     * @return bool
+     */
+    public static function userExists(int $id): bool
     {
         $result = DB_Connect::dbConnect()->query("SELECT count(*) as cnt FROM " . self::TABLE . " WHERE id = $id");
         return $result ? $result->fetch()['cnt'] : 0;
     }
 
-        /**
-         * @param string $mail
-         * @return bool
-         */
-        public static function mailExists(string $mail): bool
+    /**
+     * @param string $mail
+     * @return bool
+     */
+    public static function mailExists(string $mail): bool
     {
         $result = DB_Connect::dbConnect()->query("SELECT count(*) as cnt FROM " . self::TABLE . " WHERE email = \"$mail\"");
         return $result ? $result->fetch()['cnt'] : 0;
     }
 
-        /**
-         * delete User
-         * @param User $user
-         * @return bool
-         */
-        public static function deleteUser(User $user): bool {
-        if(self::userExists($user->getId())) {
+    /**
+     * delete User
+     * @param User $user
+     * @return bool
+     */
+    public static function deleteUser(User $user): bool
+    {
+        if (self::userExists($user->getId())) {
             return DB_Connect::dbConnect()->exec("
             DELETE FROM " . self::TABLE . " WHERE id = {$user->getId()}
         ");
@@ -116,11 +156,11 @@ class UserManager extends AbstractManager
         return false;
     }
 
-        /**
-         * @param string $mail
-         * @return User|null
-         */
-        public static function getUserByMail(string $mail): ?User
+    /**
+     * @param string $mail
+     * @return User|null
+     */
+    public static function getUserByMail(string $mail): ?User
     {
         $stmt = DB_Connect::dbConnect()->prepare("SELECT * FROM " . self::TABLE . " WHERE email = :mail LIMIT 1");
         $stmt->bindParam(':mail', $mail);

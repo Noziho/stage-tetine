@@ -17,7 +17,7 @@ class UserController extends AbstractController
         if (!$this->formIsset
         ('submit', 'mail', 'firstname', 'lastname', 'password', 'password-repeat',
             'phone-number', 'adress', 'city', 'postal-code')) {
-            header("Location: /?c=home");
+            header("Location: /?c=home&f=999999");
         }
 
             $mail = filter_var($_POST['mail'], FILTER_SANITIZE_STRING);
@@ -29,15 +29,6 @@ class UserController extends AbstractController
             $adress = filter_var($_POST['adress'], FILTER_SANITIZE_STRING);
             $city = filter_var($_POST['city'], FILTER_SANITIZE_STRING);
             $postalCode = filter_var($_POST['postal-code'], FILTER_SANITIZE_STRING);
-
-            $this->checkRange($mail, 5, 150, '/?c=home');
-            $this->checkRange($firstname, 2, 150, '/?c=home');
-            $this->checkRange($lastname, 2, 150, '/?c=home');
-            $this->checkRange($password, 7, 70, '/?c=home');
-            $this->checkRange($phoneNumber, 10, 10, '/?c=home');
-            $this->checkRange($adress, 5, 150, '/?c=home');
-            $this->checkRange($city, 5, 155, '/?c=home');
-            $this->checkRange($postalCode, 5, 55, '/?c=home');
 
 
             $user = (new User())
@@ -53,15 +44,31 @@ class UserController extends AbstractController
             ;
 
             if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-                header("Location: /?c=home");
+                header("Location: /?c=home&f=1221");
             }
 
             if (UserManager::mailExists($mail)) {
-                header("Location: /?c=home");
+                header("Location: /?c=home&f=14444");
             }
 
             if (UserManager::addUser($user)) {
                 header("Location: /index.php?c=user&f=0");
             }
+        }
+
+        public function login () {
+            if (isset($_POST['submit'])) {
+                if (!$this->formIsset('mail', 'password')) {
+                    header("Location: /?home&f=1");
+                }
+
+                $mail = filter_var($_POST['mail'], FILTER_SANITIZE_STRING);
+                $password = $_POST['password'];
+
+                UserManager::login($mail, $password);
+            }
+
+            $this->render('user/login');
+
         }
 }
