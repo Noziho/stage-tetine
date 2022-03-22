@@ -14,6 +14,9 @@
     <div>
         <span><a href="/?c=user&a=login">Login</a>/<a href="/?c=user">Inscription</a></span>
     </div>
+
+    <a href="/?c=category">Catégories des Tétines</a>
+    <a href="/?c=product">Tétines</a>
 </header>
 
 <main><?= $html ?></main>
