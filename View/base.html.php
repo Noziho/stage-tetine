@@ -24,10 +24,11 @@
             <li><a href="/?c=home"><i class="fas fa-home"></i></a></li>
             <li><a href="/?c=category">Catégories des Tétines</a></li>
             <li><a href="/?c=product">Tout nos produits</a></li>
-            <li><a href="/?c=user&a=disconnect">Déconnexion</a></li><?php
+    </ul>
+            <div id="logout"><a href="/?c=user&a=disconnect">Déconnexion</a></div><?php
         }
         ?>
-    </ul>
+
 </header>
 
 <main><?= $html ?></main>
