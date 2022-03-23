@@ -8,10 +8,15 @@ html {
     box-sizing: border-box;
 }
 
+* a {
+    color: #222222;
+    text-decoration: none;
+}
+
 body {
     font-size: 1.6rem;
     background: whitesmoke;
-    color: black;
+    color: #222222;
 }
 
 h1 {
@@ -26,6 +31,25 @@ header {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+}
+
+li {
+    margin-inline: 2rem;
+    animation: linear;
+    animation-duration: 2s;
+}
+
+li:hover {
+    border-bottom: 1px solid black;
+}
+
+.fa-home {
+    font-size: 2rem;
 }
 
 main {
@@ -106,6 +130,7 @@ main {
     }
 
 }
+
 
 
 
