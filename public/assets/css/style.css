@@ -117,7 +117,42 @@ main {
 
 .product-details > p {
     width: 100%;
+
 }
+
+#register-container, #login-container {
+    margin-top: 10rem;
+    width: 60%;
+    border-radius: 12px;
+    background: #eed6b4;
+    padding: 2rem;
+    min-height: 20rem;
+}
+
+label, input {
+    display: block;
+    margin-top: 1rem;
+}
+
+.submit-button {
+    width: 25%;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    padding: 1rem;
+    background: #d5ae77;
+}
+
+.double-input {
+    width: 100%;
+    display: flex;
+
+}
+
+.double-input > div + div {
+    margin-left: 10rem;
+}
+
 @keyframes height {
 
     from {
