@@ -18,12 +18,12 @@
                 <span><a href="/?c=user&a=login">Login</a>/<a href="/?c=user">Inscription</a></span>
             </li>
             <li><a href="/?c=category">Catégories des Tétines</a></li>
-            <li><a href="/?c=product">Tétines</a></li><?php
+            <li><a href="/?c=product">Tout nos produits</a></li><?php
         }
         else { ?>
             <li><a href="/?c=home"><i class="fas fa-home"></i></a></li>
             <li><a href="/?c=category">Catégories des Tétines</a></li>
-            <li><a href="/?c=product">Tétines</a></li>
+            <li><a href="/?c=product">Tout nos produits</a></li>
             <li><a href="/?c=user&a=disconnect">Déconnexion</a></li><?php
         }
         ?>
