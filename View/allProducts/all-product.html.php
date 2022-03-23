@@ -15,9 +15,19 @@ if (isset($data['products'])) {
 }
     foreach ($products as $product) {
         /* @var Product $product */?>
-        <img src="/assets/img/category/<?= CategoryManager::getCategoryByProduct($product->getId()) ?>/<?=str_replace(' ', '', $product->getImage()) ?>.jpg" alt="">
-        <p><?= $product->getProductName() ?></p>
-        <p><?= $product->getPrice() ?>€</p><?php
+
+            <div class="container">
+                <div>
+                    <a href="">
+                    <img class="product-images" src="/assets/img/category/<?= CategoryManager::getCategoryByProduct($product->getId()) ?>/<?=str_replace(' ', '', $product->getImage()) ?>.jpg" alt="">
+                    <div class="product-details">
+                        <p><?= $product->getProductName() ?></p>
+                        <p><?= $product->getPrice() ?>€</p>
+                    </div>
+                    </a>
+                </div>
+            </div>
+        <?php
 
     }?>
 
