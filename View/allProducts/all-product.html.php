@@ -12,11 +12,12 @@ use App\Model\Manager\CategoryManager;
 if (isset($data['products'])) {
     $products = $data['products'];
 
-}
+}?>
+<div class="container"><?php
     foreach ($products as $product) {
         /* @var Product $product */?>
 
-            <div class="container">
+            <div class="container-image">
                 <div>
                     <a href="">
                     <img class="product-images" src="/assets/img/category/<?= CategoryManager::getCategoryByProduct($product->getId()) ?>/<?=str_replace(' ', '', $product->getImage()) ?>.jpg" alt="">
@@ -30,7 +31,7 @@ if (isset($data['products'])) {
         <?php
 
     }?>
-
+</div>
 
 
 
