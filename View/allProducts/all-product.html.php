@@ -22,7 +22,7 @@ if (isset($data['products'])) {
                     <img class="product-images" src="/assets/img/category/<?= CategoryManager::getCategoryByProduct($product->getId()) ?>/<?=str_replace(' ', '', $product->getImage()) ?>.jpg" alt="">
                     <div class="product-details">
                         <p><?= $product->getProductName() ?></p>
-                        <p><?= $product->getPrice() ?>€</p>
+                        <p>Prix: <?= $product->getPrice() ?>€</p>
                     </div>
                     </a>
                 </div>
