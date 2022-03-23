@@ -20,15 +20,15 @@ class UserController extends AbstractController
             header("Location: /?c=home&f=999999");
         }
 
-            $mail = filter_var($_POST['mail'], FILTER_SANITIZE_STRING);
-            $firstname = filter_var($_POST['firstname'], FILTER_SANITIZE_STRING);
-            $lastname = filter_var($_POST['lastname'], FILTER_SANITIZE_STRING);
+            $mail = trim(filter_var($_POST['mail'], FILTER_SANITIZE_STRING));
+            $firstname = trim(filter_var($_POST['firstname'], FILTER_SANITIZE_STRING));
+            $lastname = trim(filter_var($_POST['lastname'], FILTER_SANITIZE_STRING));
             $password = password_hash($_POST['password'], PASSWORD_ARGON2I);
-            $phoneNumber = filter_var($_POST['phone-number'], FILTER_SANITIZE_NUMBER_INT);
+            $phoneNumber = trim(filter_var($_POST['phone-number'], FILTER_SANITIZE_NUMBER_INT));
             $phoneNumber = (int)$phoneNumber;
-            $adress = filter_var($_POST['adress'], FILTER_SANITIZE_STRING);
-            $city = filter_var($_POST['city'], FILTER_SANITIZE_STRING);
-            $postalCode = filter_var($_POST['postal-code'], FILTER_SANITIZE_STRING);
+            $adress = trim(filter_var($_POST['adress'], FILTER_SANITIZE_STRING));
+            $city = trim(filter_var($_POST['city'], FILTER_SANITIZE_STRING));
+            $postalCode = trim(filter_var($_POST['postal-code'], FILTER_SANITIZE_STRING));
 
 
             $user = (new User())
@@ -70,5 +70,13 @@ class UserController extends AbstractController
 
             $this->render('user/login');
 
+        }
+
+        public function disconnect():void
+        {
+            $_SESSION['user'] = null;
+            session_unset();
+            session_destroy();
+            $this->render('home/home');
         }
 }

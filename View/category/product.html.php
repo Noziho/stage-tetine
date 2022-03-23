@@ -2,6 +2,14 @@
 
 <div id="category">
     <h3>Animaux</h3>
+    <?php
+    /* @var Product $product */
+
+    use App\Model\Entity\Product;
+    use App\Model\Manager\CategoryManager;
+
+    ?>
+    <img src="/public/assets/img/category/Animaux/<?= CategoryManager::getCategoryByProduct($product->getId()) ?>/<?=str_replace(' ', '', $product->getImage()) ?>.jpg" alt="">
     <h3>Disney</h3>
     <h3>Drapeaux</h3>
     <h3>Frère et Soeur</h3>
