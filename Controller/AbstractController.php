@@ -3,13 +3,22 @@ abstract class AbstractController
 {
     abstract public function index();
 
-    public function render (string $template, $data = []) {
+    /**
+     * @param string $template
+     * @param array $data
+     * @return void
+     */
+    public function render (string $template, array $data = []) {
         ob_start();
         require __DIR__ . "/../View/" . $template . ".html.php";
         $html = ob_get_clean();
         require __DIR__. "/../View/base.html.php";
     }
 
+    /**
+     * @param ...$inputNames
+     * @return bool
+     */
     public function formIsset (...$inputNames): bool
     {
         foreach ($inputNames as $name) {
@@ -20,11 +29,33 @@ abstract class AbstractController
         return true;
     }
 
+    /**
+     * @param string $value
+     * @param int $min
+     * @param int $max
+     * @param string $redirect
+     * @return void
+     */
     public function checkRange (string $value, int $min, int $max, string $redirect): void
     {
         if (strlen($value) < $min || strlen($value) > $max) {
             header("Location: " . $redirect);
             exit();
+        }
+    }
+
+    /**
+     * @param string $password
+     * @param string $password_repeat
+     * @return bool
+     */
+    public function checkPassword(string $password, string $password_repeat):bool
+    {
+        if ($password !== $password_repeat) {
+            return true;
+        }
+        else {
+            return false;
         }
     }
 }
