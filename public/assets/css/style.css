@@ -184,6 +184,17 @@ label, input {
     margin-left: 10rem;
 }
 
+.swiper {
+    margin-top: 3rem;
+    width: 100%;
+    height: 40rem;
+}
+
+.swiper-slide > img {
+    width: 100%;
+    height: 40rem;
+}
+
 @keyframes height {
 
     from {

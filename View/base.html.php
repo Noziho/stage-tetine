@@ -7,6 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Nassima tétine</title>
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
 </head>
 <body>
 <header>
@@ -30,6 +34,8 @@
 </header>
 
 <main><?= $html ?></main>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script src="/assets/js/Carousel.js"></script>
 <script src="/assets/js/app.js"></script>
 </body>
 </html>
