@@ -34,7 +34,7 @@
 </header>
 
 <main><?= $html ?></main>
-<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="/assets/js/Carousel.js"></script>
 <script src="/assets/js/app.js"></script>
 </body>

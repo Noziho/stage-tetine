@@ -1,29 +1,16 @@
-const swiper = new Swiper('.swiper', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
-
-    // If we need pagination
-    pagination: {
-        el: '.swiper-pagination',
-    },
-
-
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-    },
-
-
-    // Navigation arrows
+let swiper = new Swiper(".mySwiper", {
+    spaceBetween: 10,
+    slidesPerView: 4,
+    freeMode: true,
+    watchSlidesProgress: true,
+});
+let swiper2 = new Swiper(".mySwiper2", {
+    spaceBetween: 10,
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
     },
-
-    // And if we need scrollbar
-    scrollbar: {
-        el: '.swiper-scrollbar',
+    thumbs: {
+        swiper: swiper,
     },
 });
