@@ -58,4 +58,8 @@ abstract class AbstractController
             return false;
         }
     }
+
+    public function firstName() {
+
+    }
 }
