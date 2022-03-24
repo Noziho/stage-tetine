@@ -10,29 +10,26 @@
 </head>
 <body>
 <header>
-    <ul>
-        <?php
-        if (!isset($_SESSION['user'])) { ?>
-            <li><a href="/?c=home"><i class="fas fa-home"></i></a></li>
-            <li>
-                <span><a href="/?c=user&a=login">Login</a>/<a href="/?c=user">Inscription</a></span>
-            </li>
-            <li><a href="/?c=category">Catégories des Tétines</a></li>
-            <li><a href="/?c=product">Tout nos produits</a></li><?php
-        }
-        else { ?>
-            <li><a href="/?c=home"><i class="fas fa-home"></i></a></li>
-            <li><a href="/?c=category">Catégories des Tétines</a></li>
-            <li><a href="/?c=product">Tout nos produits</a></li>
-    </ul>
-            <div id="logout"><a href="/?c=user&a=disconnect">Déconnexion</a></div><?php
-        }
+
+    <div>
+        <a href="/?c=home"><img id="logo" src="/assets/img/logo/first-image1.png" alt=""></a>
+    </div>
+
+    <div id="logout">
+        <a href="/?c=product">Nos produits</a><?php
+            if (!isset($_SESSION['user'])) {?>
+                <span><a href="/?c=user&a=login">Login</a>/<a href="/?c=user">Inscription</a></span><?php
+            }
+            else {?>
+                 <a href="/?c=user&a=disconnect">Déconnexion</a><?php
+            }
         ?>
+
+    </div>
 
 </header>
 
 <main><?= $html ?></main>
-<script src="https://kit.fontawesome.com/f06b2f84ad.js" crossorigin="anonymous"></script>
 <script src="/assets/js/app.js"></script>
 </body>
 </html>
