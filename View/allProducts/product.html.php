@@ -24,7 +24,7 @@ if (isset($data['product'])) {
     </div>
 
     <div>
-        <form action="">
+        <form action="/?c=product&a=add-basket">
             <input type="submit" value="Ajoutez au panier">
         </form>
     </div>
