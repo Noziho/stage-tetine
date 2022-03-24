@@ -33,7 +33,7 @@ if (isset($data['products'])) {
 
             <div class="container-image">
                 <div>
-                    <a href="">
+                    <a href="/?c=product&a=show-product&id=<?= $product->getId() ?>">
                     <img class="product-images" src="/assets/img/category/<?= CategoryManager::getCategoryByProduct($product->getId()) ?>/<?=str_replace(' ', '', $product->getImage()) ?>.jpg" alt="">
                     <div class="product-details">
                         <p><?= ucfirst($product->getProductName()) ?></p>

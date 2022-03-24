@@ -11,4 +11,16 @@ class ProductController extends AbstractController
             'products' => ProductManager::getAll(),
         ]);
     }
+
+    public function showProduct (int $id)
+    {
+        if (null === $id) {
+            header("Location: /index.php?c=home");
+        }
+
+
+        $this->render('allProducts/product', [
+            'product' => ProductManager::getProductById($id),
+        ]);
+    }
 }

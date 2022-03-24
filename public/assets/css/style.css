@@ -262,6 +262,22 @@ label, input {
     height: 40rem;
 }
 
+#product-container {
+    padding: 3rem;
+    margin-top: 6rem;
+    width: 60%;
+    background: #eed6b4;
+    min-height: 40rem;
+}
+
+#product-container > div {
+    width: 100%;
+}
+
+#product-container > div > img {
+    width: 30%;
+}
+
 @keyframes height {
 
     from {

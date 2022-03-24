@@ -3,6 +3,7 @@
 namespace App\Model\Manager;
 
 use App\Model\Entity\Product;
+use App\Model\Entity\User;
 use DB_Connect;
 
 class ProductManager extends AbstractManager
@@ -25,5 +26,24 @@ class ProductManager extends AbstractManager
             }
         }
         return $images;
+    }
+
+
+    public static function getProductById (int $id) {
+        $query = DB_Connect::dbConnect()->query(
+            "SELECT * FROM " . self::TABLE . " WHERE id = $id
+        ");
+        return $query ? self::makeProduct($query->fetch()) : null;
+
+    }
+
+    public static function makeProduct (array $data) {
+        return (new Product())
+            ->setId($data['id'])
+            ->setProductName($data['product_name'])
+            ->setPrice($data['price'])
+            ->setImage($data['image'])
+            ->setCategory($data)
+            ;
     }
 }
