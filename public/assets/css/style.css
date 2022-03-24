@@ -184,14 +184,18 @@ label, input {
     margin-left: 10rem;
 }
 
-.swiper {
+#image-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
     margin-top: 3rem;
     width: 100%;
+    background: #eed6b4;
     height: 40rem;
 }
 
-.swiper-slide > img {
-    width: 100%;
+#image-container > img {
     height: 40rem;
 }
 
