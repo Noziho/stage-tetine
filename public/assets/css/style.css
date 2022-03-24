@@ -258,6 +258,10 @@ label, input {
 
 }
 
+/*autoplay {*/
+/*    delay: 5000ms;*/
+/*}*/
+
 #image-container > img {
     height: 40rem;
 }

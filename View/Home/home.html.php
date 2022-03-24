@@ -15,7 +15,7 @@
 </div>
 
 <div id="carousel_image">
-    <div class="swiper mySwiper2">
+    <div class="swiper mySwiper2" data-swiper-autoplay="2000">
         <div id="carousel_first" class="swiper-wrapper">
             <div class="swiper-slide">
                 <img src="/assets/img/category/Animaux/animaux(1).jpg"/>
