@@ -11,6 +11,7 @@ if (isset($data['products'])) {
 }?>
 
 <div id="category">
+    <p><a href="/?c=product">Tout</a></p>
     <p><a href="/?c=product&a=category-disney">Disney</a></p>
     <p><a href="/?c=product&a=category-flags">Drapeaux</a></p>
     <p><a href="/?c=product&a=category-brother-and-sister">Frère et soeur</a></p>
