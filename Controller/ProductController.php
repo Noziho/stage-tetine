@@ -24,7 +24,7 @@ class ProductController extends AbstractController
         ]);
     }
 
-    public function categoryAnimals()
+    public function categoryDisney()
     {
         $this->render('category/animals', [
             'products'=> ProductManager::getProductByCategory(1),

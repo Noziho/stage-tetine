@@ -32,17 +32,18 @@ class ProductManager extends AbstractManager
 
     /**
      * @param int $id
-     * @return AbstractEntity|Product
+     * @return array
      */
-    public static function getProductByCategory(int $id)
+    public static function getProductByCategory(int $id): array
     {
         $query = DB_Connect::dbConnect()->query("
             SELECT * FROM mdf58_product WHERE category_fk = $id;
         ");
 
         if ($query) {
+            $products = [];
             foreach ($query->fetchAll() as $productData) {
-                $product = (new Product())
+                $products[] = (new Product())
                     ->setId($productData['id'])
                     ->setProductName($productData['product_name'])
                     ->setImage($productData['image'])
@@ -50,7 +51,7 @@ class ProductManager extends AbstractManager
                     ->setCategory($productData);
             }
         }
-        return $product;
+        return $products;
     }
 
     public static function getProductById (int $id) {
