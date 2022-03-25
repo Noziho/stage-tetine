@@ -4,6 +4,7 @@ let swiper = new Swiper(".mySwiper", {
     freeMode: true,
     watchSlidesProgress: true,
 });
+
 let swiper2 = new Swiper(".mySwiper2", {
     spaceBetween: 10,
     navigation: {
@@ -12,5 +13,8 @@ let swiper2 = new Swiper(".mySwiper2", {
     },
     thumbs: {
         swiper: swiper,
+    },
+    autoplay: {
+        delay: 5000,
     },
 });

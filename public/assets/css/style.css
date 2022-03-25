@@ -255,13 +255,7 @@ label, input {
     display: block;
     width: 50%;
     height: 70%;
-
 }
-
-autoplay {
-    delay: 5000ms;
-}
-
 #image-container > img {
     height: 40rem;
 }
