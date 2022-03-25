@@ -282,6 +282,11 @@ label, input {
     width: 30%;
 }
 
+.login_link > a {
+    font-style: italic;
+    color: #8d4d0c;
+}
+
 @keyframes height {
 
     from {
