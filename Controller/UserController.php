@@ -52,7 +52,7 @@ class UserController extends AbstractController
             }
 
             if (UserManager::addUser($user)) {
-                header("Location: /index.php?c=user&f=0");
+                header("Location: /index.php?c=user&a=login");
             }
         }
 
