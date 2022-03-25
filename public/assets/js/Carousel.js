@@ -16,5 +16,7 @@ let swiper2 = new Swiper(".mySwiper2", {
     },
     autoplay: {
         delay: 5000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
     },
 });
