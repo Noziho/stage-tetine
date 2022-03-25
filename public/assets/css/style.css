@@ -254,13 +254,13 @@ label, input {
 .swiper-slide img {
     display: block;
     width: 50%;
-    height: 100%;
+    height: 70%;
 
 }
 
-/*autoplay {*/
-/*    delay: 5000ms;*/
-/*}*/
+autoplay {
+    delay: 5000ms;
+}
 
 #image-container > img {
     height: 40rem;
