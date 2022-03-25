@@ -2,6 +2,7 @@
 
 namespace App\Model\Manager;
 
+use App\Model\Entity\AbstractEntity;
 use App\Model\Entity\Product;
 use App\Model\Entity\User;
 use DB_Connect;
@@ -31,13 +32,12 @@ class ProductManager extends AbstractManager
 
     /**
      * @param int $id
-     * @return \App\Model\Entity\AbstractEntity|Product|string
+     * @return AbstractEntity|Product
      */
     public static function getProductByCategory(int $id)
     {
         $query = DB_Connect::dbConnect()->query("
-            SELECT * FROM ". self::TABLE ." WHERE id IN (SELECT product_fk FROM mdf58_category WHERE id = $id);
-        
+            SELECT * FROM mdf58_product WHERE category_fk = $id;
         ");
 
         if ($query) {
@@ -47,7 +47,7 @@ class ProductManager extends AbstractManager
                     ->setProductName($productData['product_name'])
                     ->setImage($productData['image'])
                     ->setPrice($productData['price'])
-                    ->setCategory($productData['category_fk']);
+                    ->setCategory($productData);
             }
         }
         return $product;

@@ -7,6 +7,7 @@
 
 use App\Model\Entity\Product;
 use App\Model\Manager\CategoryManager;
+use App\Model\Manager\ProductManager;
 
 
 if (isset($data['products'])) {
@@ -15,7 +16,7 @@ if (isset($data['products'])) {
 }?>
 
 <div id="category">
-    <p>Animaux</p>
+    <a href="/?c=product&a=category-animals">Animaux</a>
     <p>Disney</p>
     <p>Drapeaux</p>
     <p>Frère et Soeur</p>

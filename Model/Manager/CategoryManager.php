@@ -18,10 +18,10 @@ class CategoryManager extends AbstractManager
         ");
 
         if ($query) {
-            foreach ($query->fetchAll() as $categorydata) {
+            foreach ($query->fetchAll() as $categoryData) {
                 $category = (new Category())
-                    ->setId($categorydata['id'])
-                    ->setCategory($categorydata['name']);
+                    ->setId($categoryData['id'])
+                    ->setCategory($categoryData['name']);
             }
         }
         return $category->getCategory();

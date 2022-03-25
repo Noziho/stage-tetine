@@ -23,4 +23,11 @@ class ProductController extends AbstractController
             'product' => ProductManager::getProductById($id),
         ]);
     }
+
+    public function categoryAnimals()
+    {
+        $this->render('category/animals', [
+            'products'=> ProductManager::getProductByCategory(1),
+            ]);
+    }
 }
