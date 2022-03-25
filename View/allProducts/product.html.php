@@ -24,8 +24,21 @@ if (isset($data['product'])) {
     </div>
 
     <div>
-        <form action="/?c=product&a=add-basket">
-            <input type="submit" value="Ajoutez au panier">
+        <form action="/?c=basket&a=add-basket&id=<?= $product->getId()?>" method="post">
+            <label for="quantity">Quantité: </label>
+            <select name="quantity" id="quantity">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            <input type="submit" value="Ajoutez au panier" name="submit">
         </form>
     </div>
 

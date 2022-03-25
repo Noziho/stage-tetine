@@ -46,4 +46,6 @@ class ProductManager extends AbstractManager
             ->setCategory($data)
             ;
     }
+
+
 }
