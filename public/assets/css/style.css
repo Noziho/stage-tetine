@@ -277,18 +277,8 @@ label, input {
     justify-content: space-between;
 }
 
-#product-container > div > div > img {
-    width: 70%;
-}
 
-#product-container > div > div {
-    width: 50%;
-}
 
-.embout {
-    display: flex;
-    justify-content: center;
-}
 
 .login_link > a {
     font-style: italic;
@@ -309,15 +299,19 @@ label, input {
 .container-embout > img {
     margin-inline: 1rem;
 }
-
-.embout {
+#product-container > div {
     display: flex;
     flex-flow: row wrap;
 }
-.embout > h2 {
-    text-align: center;
-    width: 100%;
+#product-container > div > div > img{
+    width: 75%;
 }
+
+#product-container > div > div {
+    width: 50%;
+}
+
+
 
 @keyframes height {
 
