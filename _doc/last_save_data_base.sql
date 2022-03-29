@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 25 mars 2022 à 15:43
--- Version du serveur :  5.7.31
--- Version de PHP : 7.4.9
+-- Généré le : mar. 29 mars 2022 à 08:22
+-- Version du serveur : 5.7.36
+-- Version de PHP : 7.4.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,29 +24,18 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `basket_product`
---
-
-DROP TABLE IF EXISTS `basket_product`;
-CREATE TABLE IF NOT EXISTS `basket_product` (
-  `product_fk` int(10) UNSIGNED NOT NULL,
-  `basket_fk` int(11) NOT NULL,
-  PRIMARY KEY (`product_fk`,`basket_fk`),
-  KEY `fk_mdf58_product_has_mdf58_basket_mdf58_basket1_idx` (`basket_fk`),
-  KEY `fk_mdf58_product_has_mdf58_basket_mdf58_product1_idx` (`product_fk`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `mdf58_basket`
 --
 
 DROP TABLE IF EXISTS `mdf58_basket`;
 CREATE TABLE IF NOT EXISTS `mdf58_basket` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
   `quantity` int(10) UNSIGNED NOT NULL,
   `price` int(10) UNSIGNED NOT NULL,
+  `tips` varchar(45) NOT NULL,
+  `font_family` varchar(45) NOT NULL,
+  `text_color` varchar(45) NOT NULL,
   `product_fk` int(10) UNSIGNED NOT NULL,
   `user_fk` int(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`),
@@ -963,26 +952,18 @@ CREATE TABLE IF NOT EXISTS `mdf58_user` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   UNIQUE KEY `email_UNIQUE` (`email`),
   KEY `fk_mdf58_user_mdf58_role_idx` (`role_fk`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `mdf58_user`
 --
 
 INSERT INTO `mdf58_user` (`id`, `firstname`, `lastname`, `email`, `phone_number`, `password`, `city`, `postal_code`, `adress`, `role_fk`) VALUES
-(1, 'Noah', 'Decroix', 'noah.decroix3@gmail.com', 633990253, '$argon2i$v=19$m=65536,t=4,p=1$T3NSSTluYlNXc2psTjlJbw$aH7DIXG6plITx7HqWGJzTar+5bBi+udlVd9QvJIw+MM', 'Locquignol', '59530', 'MF du quesnes au leu', 1),
-(2, 'Noah', 'Decroix', 'noah.decroix33@gmail.com', 633990253, '$argon2i$v=19$m=65536,t=4,p=1$dzI3eWNCdUJISHhvdzlJMg$GkPdZrfYV/xo5otfOArAQYIPFtmO5LkzxFFICoECkkE', 'zedikizkidzekd', 'dekiede', 'kedikeikdie', 1);
+(4, 'Angélique', 'Dehainaut', 'dehainaut.angelique@orange.fr', 658036004, '$argon2i$v=19$m=65536,t=4,p=1$b2E5TlZMUXJkVGhHS1pXYg$pAGPoxtNiX5ZdfNaXDyqy5LVNGacvyIv7WjCs01N0Ro', 'Wignehies', '59212', '35 rue françois Boussus', 1);
 
 --
 -- Contraintes pour les tables déchargées
 --
-
---
--- Contraintes pour la table `basket_product`
---
-ALTER TABLE `basket_product`
-  ADD CONSTRAINT `fk_mdf58_product_has_mdf58_basket_mdf58_basket1` FOREIGN KEY (`basket_fk`) REFERENCES `mdf58_basket` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_mdf58_product_has_mdf58_basket_mdf58_product1` FOREIGN KEY (`product_fk`) REFERENCES `mdf58_product` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Contraintes pour la table `mdf58_basket`
@@ -1008,7 +989,7 @@ ALTER TABLE `mdf58_product`
 -- Contraintes pour la table `mdf58_user`
 --
 ALTER TABLE `mdf58_user`
-  ADD CONSTRAINT `fk_mdf58_user_mdf58_role` FOREIGN KEY (`role_fk`) REFERENCES `mdf58_role` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_mdf58_user_mdf58_role` FOREIGN KEY (`role_fk`) REFERENCES `mdf58_role` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

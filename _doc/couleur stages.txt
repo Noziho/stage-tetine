@@ -1,0 +1,46 @@
+Couleurs possibles
+
+=> Rose:background: #ffb0d6 none repeat scroll 0 0;
+    color: #000;
+
+=>Violet:     background: #a10684;
+    color: #ffffff;
+
+=> Bleu ciel:     background: #8ca5ff none repeat scroll 0 0;
+    color: #ffffff;
+
+=> Bleu marine: background: #0000ad;
+    color: #ffffff;
+
+=> Jaune:     background: #feff57;
+    color: #000000;
+
+=> Rouge: background: #f30800;
+    color: #ffffff;
+
+=>Pomme :     background: #89ff49;
+    color: #ffffff;
+
+=> Fushia :     background: #ff1cd5;
+    color: #fff;
+
+=> Noir: background: #000000;
+    color: #ffffff;
+
+=> Cyan: background: #0eb0e6;
+    color: #000000;
+
+=> Blanc
+
+=> Orange : background: #ed7f10;
+    color: #ffffff;
+
+=>Marron : background: #955628;
+    color: #ffffff;
+
+=> Vert     background: #009f05;
+    color: #ffffff;
+
+Une tétine = 9E
+les deux =16E
+les trois = 22E

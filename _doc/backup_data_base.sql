@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 25 mars 2022 à 12:44
--- Version du serveur : 5.7.36
--- Version de PHP : 7.4.26
+-- Généré le : ven. 25 mars 2022 à 15:43
+-- Version du serveur :  5.7.31
+-- Version de PHP : 7.4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,6 +24,21 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `basket_product`
+--
+
+DROP TABLE IF EXISTS `basket_product`;
+CREATE TABLE IF NOT EXISTS `basket_product` (
+  `product_fk` int(10) UNSIGNED NOT NULL,
+  `basket_fk` int(11) NOT NULL,
+  PRIMARY KEY (`product_fk`,`basket_fk`),
+  KEY `fk_mdf58_product_has_mdf58_basket_mdf58_basket1_idx` (`basket_fk`),
+  KEY `fk_mdf58_product_has_mdf58_basket_mdf58_product1_idx` (`product_fk`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `mdf58_basket`
 --
 
@@ -33,12 +48,12 @@ CREATE TABLE IF NOT EXISTS `mdf58_basket` (
   `quantity` int(10) UNSIGNED NOT NULL,
   `price` int(10) UNSIGNED NOT NULL,
   `product_fk` int(10) UNSIGNED NOT NULL,
-  `mdf58_user_fk` int(10) UNSIGNED NOT NULL,
+  `user_fk` int(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `fk_mdf58_basket_mdf58_product1_idx` (`product_fk`),
-  KEY `fk_mdf58_basket_mdf58_user1_idx` (`mdf58_user_fk`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  KEY `fk_mdf58_basket_mdf58_user1_idx` (`user_fk`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -49,9 +64,9 @@ CREATE TABLE IF NOT EXISTS `mdf58_basket` (
 DROP TABLE IF EXISTS `mdf58_category`;
 CREATE TABLE IF NOT EXISTS `mdf58_category` (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) COLLATE utf8_bin NOT NULL,
+  `name` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `mdf58_category`
@@ -84,7 +99,7 @@ CREATE TABLE IF NOT EXISTS `mdf58_order` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `fk_mdf58_order_mdf58_basket1_idx` (`basket_fk`),
   KEY `fk_mdf58_order_mdf58_user1_idx` (`user_fk`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -95,14 +110,14 @@ CREATE TABLE IF NOT EXISTS `mdf58_order` (
 DROP TABLE IF EXISTS `mdf58_product`;
 CREATE TABLE IF NOT EXISTS `mdf58_product` (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `product_name` varchar(255) COLLATE utf8_bin NOT NULL,
+  `product_name` varchar(255) NOT NULL,
   `price` double NOT NULL,
-  `image` varchar(45) COLLATE utf8_bin NOT NULL,
+  `image` varchar(45) NOT NULL,
   `category_fk` int(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `fk_mdf58_product_mdf58_category1_idx` (`category_fk`)
-) ENGINE=InnoDB AUTO_INCREMENT=796 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=796 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `mdf58_product`
@@ -914,10 +929,17 @@ INSERT INTO `mdf58_product` (`id`, `product_name`, `price`, `image`, `category_f
 DROP TABLE IF EXISTS `mdf58_role`;
 CREATE TABLE IF NOT EXISTS `mdf58_role` (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `role_name` varchar(45) COLLATE utf8_bin NOT NULL,
+  `role_name` varchar(45) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `mdf58_role`
+--
+
+INSERT INTO `mdf58_role` (`id`, `role_name`) VALUES
+(1, 'user');
 
 -- --------------------------------------------------------
 
@@ -928,31 +950,46 @@ CREATE TABLE IF NOT EXISTS `mdf58_role` (
 DROP TABLE IF EXISTS `mdf58_user`;
 CREATE TABLE IF NOT EXISTS `mdf58_user` (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `firstname` varchar(100) COLLATE utf8_bin NOT NULL,
-  `lastname` varchar(100) COLLATE utf8_bin NOT NULL,
-  `email` varchar(155) COLLATE utf8_bin NOT NULL,
+  `firstname` varchar(100) NOT NULL,
+  `lastname` varchar(100) NOT NULL,
+  `email` varchar(155) NOT NULL,
   `phone_number` int(10) UNSIGNED NOT NULL,
-  `password` varchar(255) COLLATE utf8_bin NOT NULL,
-  `city` varchar(155) COLLATE utf8_bin NOT NULL,
-  `postal_code` varchar(45) COLLATE utf8_bin NOT NULL,
-  `adress` varchar(255) COLLATE utf8_bin NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `city` varchar(155) NOT NULL,
+  `postal_code` varchar(45) NOT NULL,
+  `adress` varchar(255) NOT NULL,
   `role_fk` int(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   UNIQUE KEY `email_UNIQUE` (`email`),
   KEY `fk_mdf58_user_mdf58_role_idx` (`role_fk`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `mdf58_user`
+--
+
+INSERT INTO `mdf58_user` (`id`, `firstname`, `lastname`, `email`, `phone_number`, `password`, `city`, `postal_code`, `adress`, `role_fk`) VALUES
+(1, 'Noah', 'Decroix', 'noah.decroix3@gmail.com', 633990253, '$argon2i$v=19$m=65536,t=4,p=1$T3NSSTluYlNXc2psTjlJbw$aH7DIXG6plITx7HqWGJzTar+5bBi+udlVd9QvJIw+MM', 'Locquignol', '59530', 'MF du quesnes au leu', 1),
+(2, 'Noah', 'Decroix', 'noah.decroix33@gmail.com', 633990253, '$argon2i$v=19$m=65536,t=4,p=1$dzI3eWNCdUJISHhvdzlJMg$GkPdZrfYV/xo5otfOArAQYIPFtmO5LkzxFFICoECkkE', 'zedikizkidzekd', 'dekiede', 'kedikeikdie', 1);
 
 --
 -- Contraintes pour les tables déchargées
 --
 
 --
+-- Contraintes pour la table `basket_product`
+--
+ALTER TABLE `basket_product`
+  ADD CONSTRAINT `fk_mdf58_product_has_mdf58_basket_mdf58_basket1` FOREIGN KEY (`basket_fk`) REFERENCES `mdf58_basket` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_mdf58_product_has_mdf58_basket_mdf58_product1` FOREIGN KEY (`product_fk`) REFERENCES `mdf58_product` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
 -- Contraintes pour la table `mdf58_basket`
 --
 ALTER TABLE `mdf58_basket`
   ADD CONSTRAINT `fk_mdf58_basket_mdf58_product1` FOREIGN KEY (`product_fk`) REFERENCES `mdf58_product` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_mdf58_basket_mdf58_user1` FOREIGN KEY (`mdf58_user_fk`) REFERENCES `mdf58_user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_mdf58_basket_mdf58_user1` FOREIGN KEY (`user_fk`) REFERENCES `mdf58_user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Contraintes pour la table `mdf58_order`
@@ -971,7 +1008,7 @@ ALTER TABLE `mdf58_product`
 -- Contraintes pour la table `mdf58_user`
 --
 ALTER TABLE `mdf58_user`
-  ADD CONSTRAINT `fk_mdf58_user_mdf58_role` FOREIGN KEY (`role_fk`) REFERENCES `mdf58_role` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_mdf58_user_mdf58_role` FOREIGN KEY (`role_fk`) REFERENCES `mdf58_role` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
