@@ -166,4 +166,22 @@ class UserManager extends AbstractManager
         $stmt->bindParam(':mail', $mail);
         return $stmt->execute() ? self::makeUser($stmt->fetch()) : null;
     }
+
+    public static function editUser(int $id, string $firstname, string $lastname, string $email,int $phone, string $city,
+                                    string $postal, string $address)
+    {
+        $stmt = DB_Connect::dbConnect()->prepare("
+            UPDATE " . self::TABLE ." SET firstname:firstname, lastname:lastname, email:email, phone:phone, city:city, 
+            postal:postal, address:address WHERE id = $id
+        ");
+        $stmt->bindParam(':firstname', $firstname);
+        $stmt->bindParam(':lastname', $lastname);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':phone', $phone);
+        $stmt->bindParam(':city', $city);
+        $stmt->bindParam(':postal', $postal);
+        $stmt->bindParam(':address', $address);
+
+        $stmt->execute();
+    }
 }

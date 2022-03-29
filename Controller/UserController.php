@@ -79,4 +79,44 @@ class UserController extends AbstractController
             session_destroy();
             $this->render('home/home');
         }
+
+    /**
+     * @param int $id
+     * @return void
+     */
+        public function showUser (int $id)
+        {
+            if (null === $id) {
+                header('Location: /index.php?c=home');
+            }
+
+            $this->render('user/profile', [
+                'profile'=>UserManager::getUserById($id)
+            ]);
+        }
+
+        public function editUser(int $id)
+        {
+            if (isset($_POST['submit'])) {
+                $user = $_SESSION['user'];
+                /* @var User $user */
+                $id = $user->getId();
+                $firstname = filter_var($_POST['firstname'], FILTER_SANITIZE_STRING);
+                $lastname = filter_var($_POST['lastname'], FILTER_SANITIZE_STRING);
+                $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+                $phone = filter_var($_POST['phone-number'], FILTER_SANITIZE_NUMBER_INT);
+                $city = filter_var($_POST['city'], FILTER_SANITIZE_STRING);
+                $postal = filter_var($_POST['postal-code'], FILTER_SANITIZE_STRING);
+                $address = filter_var($_POST['postal-code'], FILTER_SANITIZE_STRING);
+
+                UserManager::editUser($id,$firstname, $lastname, $email, $phone, $city, $postal, $address);
+            }
+        }
+
+        public function deletedUser(int $id)
+        {
+            $user = UserManager::getUserById($id);
+            $deleted = UserManager::deleteUser($user);
+            header('Location: /index.php?c=home');
+        }
 }

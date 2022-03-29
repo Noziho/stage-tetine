@@ -21,10 +21,16 @@
 
     <div id="logout">
         <a href="/?c=product">Nos produits</a><?php
-            if (!isset($_SESSION['user'])) {?>
+
+        use App\Model\Entity\User;
+
+        if (!isset($_SESSION['user'])) {?>
                 <span><a href="/?c=user&a=login">Login</a>/<a href="/?c=user">Inscription</a></span><?php
             }
-            else {?>
+            else {
+                $user = $_SESSION['user'];
+                /* @var User $user */ ?>
+                <a href="/?c=user&a=show-user&id=<?= $user->getId() ?>">Mon profil</a>
                  <a href="/?c=user&a=disconnect">Déconnexion</a><?php
             }
         ?>

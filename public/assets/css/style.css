@@ -283,6 +283,24 @@ label, input {
     color: #8d4d0c;
 }
 
+#title-profile {
+    text-align: center;
+}
+
+#container-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+
+#profile {
+    justify-content: center;
+    width: 100%;
+    margin: 1rem;
+    border-bottom: 1px solid black;
+}
+
 @keyframes height {
 
     from {
