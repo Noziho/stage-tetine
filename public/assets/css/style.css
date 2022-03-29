@@ -311,6 +311,70 @@ label, input {
     width: 50%;
 }
 
+h2 {
+    text-align: center;
+}
+
+.pink {
+    background: #ffb0d6;
+}
+
+.violet {
+    background: #a10684;
+    color: white;
+}
+
+.skyBlue {
+    background: #8ca6ff;
+}
+
+.blue {
+    background: #0000ad;
+    color: white;
+}
+
+.yellow {
+    background: #feff57;
+}
+
+.red {
+    background: #f30800;
+    color: white;
+}
+
+.appleGreen {
+    background: #89ff49;
+}
+
+.fushia {
+    background: #ff1cd5;
+}
+
+.black {
+    background: #000000;
+    color: white;
+}
+
+.cyan {
+background: #0eb0e6;
+}
+
+.white {
+    background: #fff;
+}
+
+.orange {
+    background: #ed7f10;
+}
+
+.brown {
+    background: #955628;
+    color: white;
+}
+
+.green {
+    background: #009f05;
+}
 
 
 @keyframes height {
