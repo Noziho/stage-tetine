@@ -40,8 +40,21 @@
 </header>
 
 <main><?= $html ?></main>
+
+<footer>
+    <div>
+        <a href="/?c=home"><img id="logo" src="/assets/img/logo/first-image1.png" alt=""></a>
+    </div>
+
+    <div>
+    <a href="/?c=form&a=contact">Contact</a>
+    <a href="/?c=form&a=confidentiality">Confidentialité</a>
+    </div>
+</footer>
+
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="/assets/js/Carousel.js"></script>
 <script src="/assets/js/app.js"></script>
+
 </body>
 </html>

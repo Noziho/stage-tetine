@@ -43,7 +43,7 @@ h1 {
     text-align: center;
 }
 
-header {
+header, footer {
     width: 100%;
     height: 5rem;
     background: #eed6b4;
