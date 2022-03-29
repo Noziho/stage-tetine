@@ -272,15 +272,51 @@ label, input {
 
 #product-container > div {
     width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
 }
 
-#product-container > div > img {
-    width: 30%;
+#product-container > div > div > img {
+    width: 70%;
+}
+
+#product-container > div > div {
+    width: 50%;
+}
+
+.embout {
+    display: flex;
+    justify-content: center;
 }
 
 .login_link > a {
     font-style: italic;
     color: #8d4d0c;
+}
+
+#price_name_product > p {
+    width: 100%;
+}
+
+
+
+.container-embout {
+    display: flex;
+    margin: 3rem;
+}
+
+.container-embout > img {
+    margin-inline: 1rem;
+}
+
+.embout {
+    display: flex;
+    flex-flow: row wrap;
+}
+.embout > h2 {
+    text-align: center;
+    width: 100%;
 }
 
 @keyframes height {
@@ -295,8 +331,3 @@ label, input {
     }
 
 }
-
-
-
-
-
