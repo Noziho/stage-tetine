@@ -54,6 +54,7 @@ class UserController extends AbstractController
             if (UserManager::addUser($user)) {
                 header("Location: /index.php?c=user&a=login");
             }
+            self::login();
         }
 
         public function login () {
@@ -107,16 +108,23 @@ class UserController extends AbstractController
                 $phone = filter_var($_POST['phone-number'], FILTER_SANITIZE_NUMBER_INT);
                 $city = filter_var($_POST['city'], FILTER_SANITIZE_STRING);
                 $postal = filter_var($_POST['postal-code'], FILTER_SANITIZE_STRING);
-                $address = filter_var($_POST['postal-code'], FILTER_SANITIZE_STRING);
+                $address = filter_var($_POST['adress'], FILTER_SANITIZE_STRING);
 
                 UserManager::editUser($id,$firstname, $lastname, $email, $phone, $city, $postal, $address);
+                $this->render('user/profile', [
+                    'profile'=>UserManager::getUserById($id)
+                ]);
             }
         }
 
-        public function deletedUser(int $id)
+        public function deleteUser(int $id)
         {
-            $user = UserManager::getUserById($id);
-            $deleted = UserManager::deleteUser($user);
-            header('Location: /index.php?c=home');
+            if (UserManager::userExists($id)) {
+                $user = UserManager::getUserById($id);
+                $deleted = UserManager::deleteUser($user);
+            }
+            self::disconnect();
+            $this->index();
+
         }
 }

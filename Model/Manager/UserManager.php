@@ -171,8 +171,8 @@ class UserManager extends AbstractManager
                                     string $postal, string $address)
     {
         $stmt = DB_Connect::dbConnect()->prepare("
-            UPDATE " . self::TABLE ." SET firstname:firstname, lastname:lastname, email:email, phone:phone, city:city, 
-            postal:postal, address:address WHERE id = $id
+            UPDATE " . self::TABLE ." SET firstname = :firstname, lastname = :lastname, email = :email, phone_number = :phone, city = :city, 
+            postal_code = :postal, adress = :address WHERE id = $id
         ");
         $stmt->bindParam(':firstname', $firstname);
         $stmt->bindParam(':lastname', $lastname);
