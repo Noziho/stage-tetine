@@ -272,16 +272,46 @@ label, input {
 
 #product-container > div {
     width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
 }
 
-#product-container > div > img {
-    width: 30%;
-}
+
+
 
 .login_link > a {
     font-style: italic;
     color: #8d4d0c;
 }
+
+#price_name_product > p {
+    width: 100%;
+}
+
+
+
+.container-embout {
+    display: flex;
+    margin: 3rem;
+}
+
+.container-embout > img {
+    margin-inline: 1rem;
+}
+#product-container > div {
+    display: flex;
+    flex-flow: row wrap;
+}
+#product-container > div > div > img{
+    width: 75%;
+}
+
+#product-container > div > div {
+    width: 50%;
+}
+
+
 
 @keyframes height {
 
@@ -295,8 +325,3 @@ label, input {
     }
 
 }
-
-
-
-
-

@@ -20,27 +20,28 @@ if (isset($data['product'])) {
         </div>
 
         <div>
-                <h2>Embouts</h2>
-                <div>
-                    <div class="container-embout">
-                        <img src="/assets/img/tips/embout%20anatomique.png" alt="Embout anatomique">
+            <h2>Embouts</h2>
+            <div>
+                <div class="container-embout">
+                    <img src="/assets/img/tips/embout%20anatomique.png" alt="Embout anatomique">
 
-                        <img src="/assets/img/tips/embout%20cerise.png" alt="Embout cerise">
+                    <img src="/assets/img/tips/embout%20cerise.png" alt="Embout cerise">
 
-                    </div>
+                </div>
 
-                    <div class="container-embout">
-                        <img src="/assets/img/tips/embout%20dynamique%20LOVI.png" alt="Embout dynamique">
+                <div class="container-embout">
+                    <img src="/assets/img/tips/embout%20dynamique%20LOVI.png" alt="Embout dynamique">
 
-                        <img src="/assets/img/tips/embout%20physiologique.png" alt="Embout physiologique"
-                    </div>
+                    <img src="/assets/img/tips/embout%20physiologique.png" alt="Embout physiologique"
+                </div>
+            </div>
         </div>
     </div>
-</div>
 
     <?php
     if (!isset($_SESSION['user'])) { ?>
-        <p>Pour ajoutez un article au panier veuillez <span class="login_link"><a href="/?c=user&a=login">vous connecter</a></span>
+        <p>Pour ajoutez un article au panier veuillez <span class="login_link"><a
+                        href="/?c=user&a=login">vous connecter</a></span>
         </p><?php
     } else { ?>
     <form action="/?c=basket&a=add-basket&id=<?= $product->getId() ?>&p=<?= $product->getPrice() ?>"
@@ -66,6 +67,26 @@ if (isset($data['product'])) {
                 <option value="Dynamique">Dynamique</option>
                 <option value="Physiologique">Physiologique</option>
             </select>
+
+            <label for="color">
+                <select name="color" id="color">
+                    <option class="pink" value="Rose">Rose</option>
+                    <option class="violet" value="Violet">Violet</option>
+                    <option class="skyBlue" value="Bleu ciel">Bleu ciel</option>
+                    <option class="blue" value="Bleu marine">Bleu marine</option>
+                    <option class="yellow" value="Jaune">Jaune</option>
+                    <option class="red" value="Rouge">Rouge</option>
+                    <option class="appleGreen" value="Pomme">Pomme</option>
+                    <option class="fushia" value="Fushia">Fushia</option>
+                    <option class="black" value="Noir">Noir</option>
+                    <option class="cyan" value="Cyan">Cyan</option>
+                    <option class="white" value="Blanc">Blanc</option>
+                    <option class="orange" value="Orange">Orange</option>
+                    <option class="brown" value="Marron">Marron</option>
+                    <option class="green" value="Vert">Vert</option>
+                </select>
+            </label>
+
             <input type="submit" value="Ajoutez au panier" name="submit">
         </form><?php
     }
