@@ -41,6 +41,7 @@ h1 {
     display: block;
     margin: 2rem;
     text-align: center;
+    font-family: "Arial", sans-serif;
 }
 
 header, footer {
