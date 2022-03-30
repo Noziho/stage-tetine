@@ -72,6 +72,12 @@ if (isset($data['product'])) {
                 <option value="Physiologique">Physiologique</option>
             </select>
 
+            <label for="age">Age: </label>
+            <select name="age" id="age">
+                <option value="6">0/6mois</option>
+                <option value="36">6/36 mois</option>
+            </select>
+
             <label for="color"> Couleur: </label>
                 <select name="color" id="color">
                     <option class="pink" value="Rose">Rose</option>
