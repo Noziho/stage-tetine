@@ -376,6 +376,10 @@ h2 {
     background: #009f05;
 }
 
+.font-family {
+    width: 100%;
+}
+
 
 @keyframes height {
 

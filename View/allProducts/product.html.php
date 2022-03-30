@@ -35,6 +35,9 @@ if (isset($data['product'])) {
                     <img src="/assets/img/tips/embout%20physiologique.png" alt="Embout physiologique"
                 </div>
             </div>
+            <div class="container-font" id="">
+                <img class="font-family" src="/assets/img/font/font-family.png" alt="">
+            </div>
         </div>
     </div>
 
@@ -68,7 +71,7 @@ if (isset($data['product'])) {
                 <option value="Physiologique">Physiologique</option>
             </select>
 
-            <label for="color">
+            <label for="color"> Couleur: </label>
                 <select name="color" id="color">
                     <option class="pink" value="Rose">Rose</option>
                     <option class="violet" value="Violet">Violet</option>
@@ -85,7 +88,21 @@ if (isset($data['product'])) {
                     <option class="brown" value="Marron">Marron</option>
                     <option class="green" value="Vert">Vert</option>
                 </select>
-            </label>
+            
+            <label for="font-family"> Police d'écriture: </label>
+            <select name="font-family" id="font-family">
+                <option value="Police d'écriture 1">Écriture 1</option>
+                <option value="Police d'écriture 2">Écriture 2</option>
+                <option value="Police d'écriture 3">Écriture 3</option>
+                <option value="Police d'écriture 4">Écriture 4</option>
+                <option value="Police d'écriture 5">Écriture 5</option>
+                <option value="Police d'écriture 6">Écriture 6</option>
+                <option value="Police d'écriture 7">Écriture 7</option>
+                <option value="Police d'écriture 8">Écriture 8</option>
+                <option value="Police d'écriture 9">Écriture 9</option>
+                <option value="Police d'écriture 10">Écriture 10</option>
+            </select>
+            
 
             <input type="submit" value="Ajoutez au panier" name="submit">
         </form><?php
