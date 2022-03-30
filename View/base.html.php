@@ -47,7 +47,7 @@
     </div>
 
     <div>
-    <a href="/?c=form&a=contact">Contact</a>
+    <a href="/?c=user&a=save-form">Contact</a>
     <a href="/?c=form&a=confidentiality">Confidentialité</a>
     </div>
 </footer>

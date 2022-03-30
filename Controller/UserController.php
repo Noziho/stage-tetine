@@ -129,11 +129,12 @@ class UserController extends AbstractController
         }
 
         public function saveForm() {
-            $name = trim(strip_tags($_POST['name']));
-            $message = trim(strip_tags($_POST['message']));
-            $userMail = trim(strip_tags($_POST['mail']));
 
             if (isset($_POST['mail'])) {
+                $name = trim(strip_tags($_POST['name']));
+                $message = trim(strip_tags($_POST['message']));
+                $userMail = trim(strip_tags($_POST['mail']));
+
                 $to = 'dehainaut.angelique@orange.fr';
                 $subject = "Vous avez un message";
                 $headers = array(
@@ -150,6 +151,8 @@ class UserController extends AbstractController
                     }
                 }
             }
-           $this->render('form/contact');
+            else {
+                $this->render('form/contact');
+            }
         }
 }

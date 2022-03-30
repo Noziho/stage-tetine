@@ -104,7 +104,7 @@ if (isset($data['product'])) {
             </select>
             
 
-            <input type="submit" value="Ajoutez au panier" name="submit">
+            <input class="submit-button" type="submit" value="Ajoutez au panier" name="submit">
         </form><?php
     }
     ?>
