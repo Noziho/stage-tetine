@@ -10,6 +10,7 @@ require __DIR__ . '/Model/Entity/Role.php';
 require __DIR__ . '/Model/Entity/Basket.php';
 require __DIR__ . '/Model/Entity/Category.php';
 require __DIR__ . '/Model/Entity/Order.php';
+require __DIR__ . '/Model/Entity/ProductBasket.php';
 
 require __DIR__ . '/Model/Manager/AbstractManager.php';
 require __DIR__ . '/Model/Manager/UserManager.php';
@@ -18,6 +19,8 @@ require __DIR__ . '/Model/Manager/CategoryManager.php';
 require __DIR__ . '/Model/Manager/OrderManager.php';
 require __DIR__ . '/Model/Manager/ProductManager.php';
 require __DIR__ . '/Model/Manager/RoleManager.php';
+require __DIR__ . '/Model/Manager/ProductBasketManager.php';
+
 
 require __DIR__ . '/Controller/AbstractController.php';
 require __DIR__ . '/Controller/UserController.php';
