@@ -11,7 +11,9 @@
                 <label for="message"></label>
                 <textarea name="message" id="message" cols="30" rows="10" maxlength="250" placeholder="Votre messsage" required></textarea>
 
-                <button type="submit" name="submit">Envoyer</button>
+                <div>
+                    <button type="submit" name="submit">Envoyer</button>
+                </div>
             </div>
         </form>
     </div>

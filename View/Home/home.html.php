@@ -9,9 +9,16 @@
     <p>Cela fait 7ans que je me suis lancé dans les tututes personnalisées pour nos petits loulous.</p>
     <p>Vous pourrez découvrir plus de 700 tétines différentes avec une police d'écriture personnalisable, différents
         embouts, ainsi que deux types d'âge.</p>
+    <p class="standards">
+        Nos tétines de haute qualité s'adapte à la forme du palais de votre bébé, les impressions , la robustesse, les
+        formes ainsi que les tailles ont était testé auprés d'un laboratoire spécialisé qui certifie les articles
+        conformes aux normes en vigueur (EN 1400).
+    </p>
+    <p class="standards">Les produits sont certifiés sans Bisphénol.</p>
     <p>Vous aimez l'originalité ! Vous êtes au bon endroit !</p>
     <p>Profitez d'avantages à partir de deux articles: </p>
     <p>=> 9 € l'unité, les deux pour 16€, et les trois pour 22€.</p>
+
 </div>
 
 <div id="carousel_image">

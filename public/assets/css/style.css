@@ -162,7 +162,7 @@ main {
 
 }
 
-#register-container, #login-container {
+#register-container, #login-container, #contact-container, #profile-container {
     margin-top: 10rem;
     width: 60%;
     border-radius: 12px;
@@ -171,9 +171,36 @@ main {
     min-height: 20rem;
 }
 
-#login-container {
+#contact-container, #profile-container {
+    width: 70%;
+    height: 50rem;
+    background-image: url("/assets/img/background.jpg");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#title-profile {
+    text-align: center;
+    margin: 0.8rem;
+}
+
+.standards {
+    font-style: italic;
+}
+
+#login-container, #contact-container {
     display: flex;
     justify-content: center;
+}
+
+#account-deletion {
+    color: #d5ae77;
+}
+
+#profile-container  input {
+    width: 25rem;
+    border-radius: 3rem;
 }
 
 label, input {
