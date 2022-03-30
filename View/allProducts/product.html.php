@@ -35,6 +35,7 @@ if (isset($data['product'])) {
                     <img src="/assets/img/tips/embout%20physiologique.png" alt="Embout physiologique"
                 </div>
             </div>
+
             <div class="container-font" id="">
                 <img class="font-family" src="/assets/img/font/font-family.png" alt="">
             </div>
