@@ -1,6 +1,6 @@
 <div class="container">
     <div id="contact-container">
-        <form action="/?c=form&a=save" method="post">
+        <form action="/?c=user&a=save-form" method="post">
             <div>
                 <label for="name"></label>
                 <input type="text" id="name" name="name" placeholder="nom" required>
