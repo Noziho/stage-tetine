@@ -2,6 +2,7 @@
 
 use App\Model\Entity\Product;
 use App\Model\Manager\CategoryManager;
+use App\Model\Manager\ProductManager;
 
 if (isset($data['product'])) {
     $product = $data['product'];
@@ -48,7 +49,7 @@ if (isset($data['product'])) {
                         href="/?c=user&a=login">vous connecter</a></span>
         </p><?php
     } else { ?>
-    <form action="/?c=basket&a=add-basket&id=<?= $product->getId() ?>&p=<?= $product->getPrice() ?>"
+    <form action="/?c=product&a=basket&p=<?= $product->getId() ?>"
           method="post">
             <label for="quantity">Quantité: </label>
             <select name="quantity" id="quantity">
@@ -63,6 +64,9 @@ if (isset($data['product'])) {
                 <option value="9">9</option>
                 <option value="10">10</option>
             </select>
+
+            <label for="first_name">Prénom: </label>
+            <input id="first_name" name="first_name" type="text" min="2" maxlength="55">
 
             <label for="tips">Embout: </label>
             <select name="tips" id="tips">
@@ -96,8 +100,8 @@ if (isset($data['product'])) {
                     <option class="green" value="Vert">Vert</option>
                 </select>
             
-            <label for="font-family"> Police d'écriture: </label>
-            <select name="font-family" id="font-family">
+            <label for="font_family"> Police d'écriture: </label>
+            <select name="font_family" id="font_family">
                 <option value="Police d'écriture 1">Écriture 1</option>
                 <option value="Police d'écriture 2">Écriture 2</option>
                 <option value="Police d'écriture 3">Écriture 3</option>

@@ -1,7 +1,9 @@
 <?php
 
+use App\Model\Entity\Product;
 use App\Model\Manager\CategoryManager;
 use App\Model\Manager\ProductManager;
+use App\Model\Manager\UserManager;
 
 class ProductController extends AbstractController
 {
@@ -12,7 +14,7 @@ class ProductController extends AbstractController
         ]);
     }
 
-    public function showProduct (int $id)
+    public function showProduct(int $id)
     {
         if (null === $id) {
             header("Location: /index.php?c=home");
@@ -27,70 +29,101 @@ class ProductController extends AbstractController
     public function categoryDisney()
     {
         $this->render('category/animals', [
-            'products'=> ProductManager::getProductByCategory(1),
-            ]);
+            'products' => ProductManager::getProductByCategory(1),
+        ]);
     }
 
     public function categoryFlags()
     {
         $this->render('category/flags', [
-            'products'=> ProductManager::getProductByCategory(2),
+            'products' => ProductManager::getProductByCategory(2),
         ]);
     }
 
     public function categoryBrotherAndSister()
     {
         $this->render('category/brotherAndSister', [
-            'products'=> ProductManager::getProductByCategory(3),
+            'products' => ProductManager::getProductByCategory(3),
         ]);
     }
 
     public function categoryBrands()
     {
         $this->render('category/brands', [
-            'products'=> ProductManager::getProductByCategory(4),
+            'products' => ProductManager::getProductByCategory(4),
         ]);
     }
 
     public function categoryGodMotherGodFather()
     {
         $this->render('category/godmotherGodfather', [
-            'products'=> ProductManager::getProductByCategory(5),
+            'products' => ProductManager::getProductByCategory(5),
         ]);
     }
 
     public function categoryMessage()
     {
         $this->render('category/message', [
-            'products'=> ProductManager::getProductByCategory(6),
+            'products' => ProductManager::getProductByCategory(6),
         ]);
     }
 
     public function categoryParents()
     {
         $this->render('category/parents', [
-            'products'=> ProductManager::getProductByCategory(7),
+            'products' => ProductManager::getProductByCategory(7),
         ]);
     }
 
     public function categorySport()
     {
         $this->render('category/sport', [
-            'products'=> ProductManager::getProductByCategory(8),
+            'products' => ProductManager::getProductByCategory(8),
         ]);
     }
 
     public function categoryAnimals()
     {
         $this->render('category/animals', [
-            'products'=> ProductManager::getProductByCategory(9),
+            'products' => ProductManager::getProductByCategory(9),
         ]);
     }
 
     public function categoryLogoVarious()
     {
         $this->render('category/logoVarious', [
-            'products'=> ProductManager::getProductByCategory(10),
+            'products' => ProductManager::getProductByCategory(10),
         ]);
+    }
+
+    public function basket(int $p)
+    {
+        if (isset($_POST['submit'])) {
+            $product = ProductManager::getProductById($p);
+            $quantity = $_POST['quantity'];
+            $firstname = $_POST['first_name'];
+            $tips = $_POST['tips'];
+            $age = $_POST['age'];
+            $color = $_POST['color'];
+            $font_family = $_POST['font_family'];
+
+            $_SESSION['product'] = [
+                [
+                    "product" => $product,
+                    "quantity" => $quantity,
+                    "firstname" => $firstname,
+                    "tips" => $tips,
+                    "age" => $age,
+                    "color" => $color,
+                    "font_family" => $font_family
+                ],
+            ];
+            echo "<pre>";
+            var_dump($_SESSION['product']);
+            echo "</pre>";
+        } else {
+            $this->render('product/basket');
+
+        }
     }
 }
