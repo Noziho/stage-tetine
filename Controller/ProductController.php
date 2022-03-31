@@ -107,7 +107,7 @@ class ProductController extends AbstractController
             $color = $_POST['color'];
             $font_family = $_POST['font_family'];
 
-            $_SESSION['product'] = [
+            $_SESSION['product'][] = [
                 [
                     "product" => $product,
                     "quantity" => $quantity,
@@ -118,12 +118,7 @@ class ProductController extends AbstractController
                     "font_family" => $font_family
                 ],
             ];
-            echo "<pre>";
-            var_dump($_SESSION['product']);
-            echo "</pre>";
-        } else {
-            $this->render('product/basket');
-
+            $this->render('cart/cart');
         }
     }
 }
