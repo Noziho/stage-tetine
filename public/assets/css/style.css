@@ -169,7 +169,10 @@ main {
 
 .product-details > p {
     width: 100%;
+}
 
+#container-contact {
+    margin: 0 auto;
 }
 
 #register-container, #login-container, #contact-container, #profile-container {
@@ -243,9 +246,7 @@ label, input {
 
 #image-container {
     display: flex;
-    flex-flow: row wrap;
     justify-content: center;
-    align-content: center;
     margin-top: 3rem;
     width: 100%;
     background: #eed6b4;
@@ -299,14 +300,14 @@ label, input {
     width: 50%;
     height: 70%;
 }
-#image-container > img {
+#image-container > div > img {
     height: 40rem;
 }
 
 #product-container {
     padding: 3rem;
     margin-top: 6rem;
-    width: 60%;
+    width: 70%;
     background: #eed6b4;
     min-height: 40rem;
 }
@@ -318,9 +319,6 @@ label, input {
     justify-content: space-between;
 }
 
-
-
-
 .login_link > a {
     font-style: italic;
     color: #8d4d0c;
@@ -329,8 +327,6 @@ label, input {
 #price_name_product > p {
     width: 100%;
 }
-
-
 
 .container-embout {
     display: flex;
@@ -421,6 +417,19 @@ h2 {
     width: 100%;
 }
 
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+    flex-flow: column wrap;
+}
+
+#burger {
+    display: none;
+}
+
 
 @keyframes height {
 
@@ -433,4 +442,73 @@ h2 {
 
     }
 
+}
+
+@media screen and (max-width: 1355px) {
+
+    #baby1 {
+        width: 20%;
+    }
+
+    #card {
+        width: 54%;
+    }
+
+    #baby2 {
+        width: 25%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #image-container > div > img {
+        height: 27rem;
+    }
+
+    #image-container {
+        height: 27rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #baby1 {
+        width: 19%;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    #image-container > div > img {
+        height: 20rem;
+    }
+
+    #image-container {
+        height: 20rem;
+    }
+}
+
+@media screen and (max-width: 495px) {
+    header {
+        height: auto;
+    }
+
+    #burger {
+        display: flex;
+    }
+
+
+}
+
+@media screen and (max-width: 450px) {
+    #image-container > div > img {
+        height: 15rem;
+    }
+
+    #image-container {
+        height: 15rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #card {
+        width: 53%;
+    }
 }

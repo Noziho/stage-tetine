@@ -1,8 +1,11 @@
 <div id="image-container">
-    <img src="/assets/img/carousel/baby1.jpg" alt="baby">
-    <img src="/assets/img/carousel/first-image.jpg" alt="baby">
-    <img src="/assets/img/carousel/baby2.jpg" alt="baby">
+    <div >
+        <img id="baby1" src="/assets/img/carousel/baby1.jpg" alt="baby">
+        <img id="card" src="/assets/img/carousel/first-image.jpg" alt="baby">
+        <img id="baby2" src="/assets/img/carousel/baby2.jpg" alt="baby">
+    </div>
 </div>
+
 
 <div id="presentation">
     <p>Je me présente je m'appelle Nassima, je suis du Nord.</p>

@@ -1,4 +1,4 @@
-<div class="container">
+<div id="container-contact" class="container">
     <div id="contact-container">
         <form action="/?c=user&a=save-form" method="post">
             <div>

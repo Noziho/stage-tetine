@@ -25,15 +25,19 @@ if (isset($data['product'])) {
             <div>
                 <div class="container-embout">
                     <img src="/assets/img/tips/embout%20anatomique.png" alt="Embout anatomique">
+                    <span>Embout anatomique</span>
 
                     <img src="/assets/img/tips/embout%20cerise.png" alt="Embout cerise">
+                    <span>Embout cerise</span>
 
                 </div>
 
                 <div class="container-embout">
                     <img src="/assets/img/tips/embout%20dynamique%20LOVI.png" alt="Embout dynamique">
+                    <span>Embout dynamique</span>
 
-                    <img src="/assets/img/tips/embout%20physiologique.png" alt="Embout physiologique"
+                    <img src="/assets/img/tips/embout%20physiologique.png" alt="Embout physiologique">
+                    <span>Embout physiologique</span>
                 </div>
             </div>
 

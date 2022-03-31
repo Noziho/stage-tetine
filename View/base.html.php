@@ -20,18 +20,22 @@
     </div>
 
     <div id="logout">
-        <a href="/?c=product">Nos produits</a><?php
+        <div>
+            <i class="fas fa-bars" id="burger"></i>
+        </div>
+
+        <a class="responsive-menu" href="/?c=product">Nos produits</a><?php
 
         use App\Model\Entity\User;
 
         if (!isset($_SESSION['user'])) {?>
-                <span><a href="/?c=user&a=login">Login</a>/<a href="/?c=user">Inscription</a></span><?php
+                <span class="responsive-menu"><a href="/?c=user&a=login">Login</a>/<a href="/?c=user">Inscription</a></span><?php
             }
             else {
                 $user = $_SESSION['user'];
                 /* @var User $user */ ?>
-                <a href="/?c=user&a=show-user&id=<?= $user->getId() ?>">Mon profil</a>
-                 <a href="/?c=user&a=disconnect">Déconnexion</a><?php
+                <a class="responsive-menu" href="/?c=user&a=show-user&id=<?= $user->getId() ?>">Mon profil</a>
+                 <a class="responsive-menu" href="/?c=user&a=disconnect">Déconnexion</a><?php
             }
         ?>
 
@@ -52,6 +56,8 @@
     </div>
 </footer>
 
+<script src="https://kit.fontawesome.com/6167e09880.js" crossorigin="anonymous"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="/assets/js/Carousel.js"></script>
 <script src="/assets/js/app.js"></script>
