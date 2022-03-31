@@ -58,8 +58,6 @@
                 <img src="/assets/img/category/sport/sport(10).jpg"/>
             </div>
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
     </div>
     <div thumbsSlider="" class="swiper mySwiper">
         <div class="swiper-wrapper">

@@ -457,6 +457,7 @@ h2 {
     #baby2 {
         width: 25%;
     }
+
 }
 
 @media screen and (max-width: 1000px) {
@@ -473,11 +474,28 @@ h2 {
     #baby1 {
         width: 19%;
     }
+
+    .swiper-slide > img {
+        width: 50%;
+        height: 70%;
+    }
+
+    #carousel_first {
+        margin-left: 7rem;
+    }
+
+    #carousel_image {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 620px) {
     #image-container > div > img {
         height: 20rem;
+    }
+
+    #presentation {
+        width: 80%;
     }
 
     #image-container {
