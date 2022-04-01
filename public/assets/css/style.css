@@ -46,6 +46,11 @@ h1 {
     font-style: oblique;
 }
 
+#login {
+    margin: 12rem 2rem;
+
+}
+
 header, footer {
     width: 100%;
     height: 5rem;
@@ -58,7 +63,7 @@ header, footer {
 }
 
 footer {
-    margin-top: 10rem;
+    margin-top: 35rem;
 }
 
 #bottom {
@@ -196,10 +201,14 @@ main {
 #contact-container, #profile-container {
     width: 70%;
     height: 50rem;
-    background-image: url("/assets/img/background.jpg");
+    background-image: url("/assets/img/background/background.jpg");
     background-position: right;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+#background-login {
+    width: 20%;
 }
 
 #title-profile {
@@ -485,6 +494,12 @@ h2 {
     #image-container {
         height: 27rem;
     }
+
+    #login-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 @media screen and (max-width: 970px) {
@@ -596,6 +611,10 @@ h2 {
         width: 12rem;
     }
 
+    #background-login {
+        width: 34%;
+    }
+
     #category {
         width: 37%;
     }
@@ -610,6 +629,10 @@ h2 {
 @media screen and (max-width: 495px) {
     header {
         height: auto;
+    }
+
+    #login-container > #background-login:last-of-type {
+        display: none;
     }
 
     #burger {
