@@ -194,6 +194,15 @@ main {
     min-height: 20rem;
 }
 
+#register-container #background-login {
+    display: block;
+    margin: 0 auto;
+}
+
+.container > #register-container {
+    margin-right: 20rem;
+}
+
 #profile-container {
     margin-top: inherit;
 }
@@ -517,6 +526,10 @@ h2 {
         display: flex;
         justify-content: space-between;
     }
+
+    .double-input > div + div {
+        margin-left: 3rem;
+    }
 }
 
 @media screen and (max-width: 970px) {
@@ -526,6 +539,12 @@ h2 {
 
     #category {
         width: 30%;
+    }
+}
+
+@media screen and (max-width: 865px) {
+    #register-container {
+        width: 80%;
     }
 }
 
@@ -588,6 +607,10 @@ h2 {
 }
 
 @media screen and (max-width: 630px) {
+    .container > #register-container {
+        margin-right: 16rem;
+    }
+
     .container {
         margin-left: 22rem;
     }
@@ -643,6 +666,14 @@ h2 {
 
 }
 
+@media screen and (max-width: 520px) {
+     #first-input, .double-input {
+        flex-direction: column;
+    }
+
+
+}
+
 @media screen and (max-width: 495px) {
     header {
         height: auto;
@@ -678,6 +709,10 @@ h2 {
 }
 
 @media screen and (max-width: 450px) {
+    .container > #register-container {
+        margin-right: 11rem;
+    }
+
     #image-container > div > img {
         height: 15rem;
     }

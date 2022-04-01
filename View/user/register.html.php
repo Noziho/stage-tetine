@@ -2,6 +2,10 @@
     <div id="register-container">
         <form action="/index.php?c=user&a=register" method="post">
             <div>
+                <img id="background-login" src="/assets/img/background/background-login2.png" alt="baby">
+            </div>
+
+            <div id="first-input">
                 <label for="mail">Adresse mail</label>
                 <input type="email" id="mail" name="mail" minlength="5" maxlength="150" required>
             </div>
@@ -17,7 +21,6 @@
                     <input type="text" id="lastname" name="lastname" minlength="2" maxlength="150" required>
                 </div>
             </div>
-
 
             <div class="double-input">
                 <div>
@@ -42,7 +45,6 @@
                     <input type="text" id="adress" name="adress" minlength="5" maxlength="150" required>
                 </div>
             </div>
-
 
             <div class="double-input">
                 <div>
