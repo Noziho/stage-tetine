@@ -34,7 +34,7 @@ h1 {
 }
 
 #logo {
-   height: 5rem;
+    height: 5rem;
 }
 
 #category > p {
@@ -73,6 +73,7 @@ footer {
     padding: 1rem;
     text-align: center;
 }
+
 #presentation > p {
     line-height: 2.5rem;
 }
@@ -219,7 +220,7 @@ main {
     color: #d5ae77;
 }
 
-#profile-container  input {
+#profile-container input {
     width: 25rem;
     border-radius: 3rem;
 }
@@ -304,6 +305,7 @@ label, input {
     width: 50%;
     height: 70%;
 }
+
 #image-container > div > img {
     height: 40rem;
 }
@@ -340,11 +342,13 @@ label, input {
 .container-embout > img {
     margin-inline: 1rem;
 }
+
 #product-container > div {
     display: flex;
     flex-flow: row wrap;
 }
-#product-container > div > div > img{
+
+#product-container > div > div > img {
     width: 75%;
 }
 
@@ -462,6 +466,15 @@ h2 {
         width: 25%;
     }
 
+    .container-image {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 1130px) {
+    .container-image {
+        width: 40%;
+    }
 }
 
 @media screen and (max-width: 1000px) {
@@ -471,6 +484,16 @@ h2 {
 
     #image-container {
         height: 27rem;
+    }
+}
+
+@media screen and (max-width: 970px) {
+    .container-image {
+        width: 50%;
+    }
+
+    #category {
+        width: 30%;
     }
 }
 
@@ -493,6 +516,51 @@ h2 {
     }
 }
 
+@media screen and (max-width: 765px) {
+    .product-images {
+        height: 70%;
+    }
+
+    .product-details {
+        position: absolute;
+        bottom: 4.2rem;
+    }
+}
+
+@media screen and (max-width: 690px) {
+    .container-image {
+        width: 50%;
+    }
+
+    .product-images {
+        width: 15rem;
+        height: 45%;
+    }
+
+    .container {
+        margin-left: 24rem;
+    }
+
+    .container-image > div {
+        height: 26rem;
+    }
+
+    #category {
+        width: 40%;
+    }
+
+    .product-details {
+        bottom: 10rem;
+        width: 15rem;
+    }
+}
+
+@media screen and (max-width: 630px) {
+    .container {
+        margin-left: 22rem;
+    }
+}
+
 @media screen and (max-width: 620px) {
     #image-container > div > img {
         height: 20rem;
@@ -505,6 +573,38 @@ h2 {
     #image-container {
         height: 20rem;
     }
+
+    #category {
+        width: 33%;
+    }
+
+    .container {
+        margin-left: 18rem;
+    }
+}
+
+@media screen and (max-width: 565px) {
+    .container-image {
+        width: 43%;
+    }
+
+    .container {
+        margin-left: 17rem;
+    }
+
+    .product-images, .product-details {
+        width: 12rem;
+    }
+
+    #category {
+        width: 37%;
+    }
+
+    #category > p {
+        text-align: left;
+        font-weight: unset;
+    }
+
 }
 
 @media screen and (max-width: 495px) {
@@ -516,7 +616,25 @@ h2 {
         display: flex;
     }
 
+    #category > p {
+        font-size: 1.2rem;
+    }
 
+    .container {
+        margin-left: 15rem;
+    }
+}
+
+@media screen and (max-width: 485px) {
+    .container {
+        margin-left: 13rem;
+    }
+}
+
+@media screen and (max-width: 475px) {
+    .container {
+        margin-left: 12rem;
+    }
 }
 
 @media screen and (max-width: 450px) {
@@ -524,13 +642,44 @@ h2 {
         height: 15rem;
     }
 
-    #image-container {
-        height: 15rem;
+    .container-image {
+        width: 49%;
+    }
+
+    .product-images, .product-details {
+        width: 11rem;
     }
 }
 
+@media screen and (max-width: 421px) {
+    .product-images, .product-details {
+        width: 10rem;
+    }
+
+
+}
+
 @media screen and (max-width: 400px) {
+    #category {
+        width: 32%;
+    }
+
+    .container {
+        margin-left: 9rem;
+    }
+
     #card {
         width: 53%;
     }
 }
+
+@media screen and (max-width: 372px) {
+    .container-image {
+        flex-basis: content;
+    }
+
+    #category > p {
+        font-size: 0.9rem;
+    }
+}
+
