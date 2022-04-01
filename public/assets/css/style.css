@@ -61,6 +61,10 @@ footer {
     margin-top: 10rem;
 }
 
+#bottom {
+    margin-right: 3rem;
+}
+
 #presentation {
     width: 50%;
     font-family: 'Quicksand', sans-serif;

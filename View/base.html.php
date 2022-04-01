@@ -50,7 +50,7 @@
         <a href="/?c=home"><img id="logo" src="/assets/img/logo/first-image1.png" alt=""></a>
     </div>
 
-    <div>
+    <div id="bottom">
     <a href="/?c=user&a=save-form">Contact</a>
     <a href="/?c=form&a=confidentiality">Confidentialité</a>
     </div>
