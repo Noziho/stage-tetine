@@ -7,13 +7,14 @@ if (isset($_SESSION['product'])) {
     foreach ($_SESSION['product'] as $item) {
         foreach ($item as $product) {
             /* @var Product $product */?>
-            <div>
+            <div id="cartContainer">
                 <div>
                     <img
                         src="/assets/img/category/<?= CategoryManager::getCategoryByProduct($product['product']->getId()) ?>/<?= str_replace(' ', '', $product['product']->getImage()) ?>.jpg"
                         alt="">
                 </div>
 
+                <p>Quantité: <?= $product['quantity'] ?></p>
                 <p>Nom du produit: <?= $product['product']->getProductName() ?></p>
                 <p>Prénom: <?= $product['firstname'] ?></p>
                 <p>Écriture: <?= $product['font_family'] ?></p>
@@ -24,4 +25,9 @@ if (isset($_SESSION['product'])) {
             <?php
         }
     }
+}
+else {?>
+    <div id="cartContainerEmpty">
+        <p>Votre panier est vide.</p>
+    </div><?php
 }

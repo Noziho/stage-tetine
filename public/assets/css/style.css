@@ -447,6 +447,23 @@ h2 {
     display: none;
 }
 
+#cartContainer {
+    width: 100%;
+    border: 1px solid black;
+}
+
+#cartContainerEmpty {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background: navajowhite;
+}
+
+#cartContainer > div > img {
+    width: 5%;
+}
+
 
 @keyframes height {
 
