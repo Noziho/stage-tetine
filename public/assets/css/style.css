@@ -504,6 +504,10 @@ h2 {
     .container-image {
         width: 30%;
     }
+
+    #product-container {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 1130px) {
@@ -647,6 +651,14 @@ h2 {
         margin-left: 17rem;
     }
 
+    #contact-container {
+        width: 100%;
+    }
+
+    #container-contact {
+        width: 100%;
+    }
+
     .product-images, .product-details {
         width: 12rem;
     }
@@ -745,6 +757,12 @@ h2 {
 
     #card {
         width: 53%;
+    }
+}
+
+@media screen and (max-width: 395px) {
+    #profile-container {
+        width: 100%;
     }
 }
 
