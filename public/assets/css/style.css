@@ -508,6 +508,8 @@ h2 {
     #product-container {
         width: 100%;
     }
+
+
 }
 
 @media screen and (max-width: 1130px) {
@@ -534,6 +536,12 @@ h2 {
     .double-input > div + div {
         margin-left: 3rem;
     }
+}
+
+@media screen and (max-width: 920px) {
+   .container-embout {
+       display: block;
+   }
 }
 
 @media screen and (max-width: 970px) {
@@ -579,6 +587,11 @@ h2 {
     .product-details {
         position: absolute;
         bottom: 4.2rem;
+    }
+
+    .container-embout {
+        display: flex;
+        flex-direction: column;
     }
 }
 
