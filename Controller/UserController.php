@@ -129,7 +129,6 @@ class UserController extends AbstractController
         }
 
         public function saveForm() {
-
             if (isset($_POST['mail'])) {
                 $name = trim(strip_tags($_POST['name']));
                 $message = trim(strip_tags($_POST['message']));
@@ -142,7 +141,7 @@ class UserController extends AbstractController
                     'X-Mailer' => 'PHP/' . phpversion()
                 );
                 if (filter_var($userMail, FILTER_VALIDATE_EMAIL)) {
-                    if (strlen($message <= 250)) {
+                    if (strlen($message) >=20 && strlen($message) <= 250) {
                         if (mail($to, $subject, $message, $headers, $userMail)) {
                             $_SESSION['mail'] = "mail-success";
                         } else {

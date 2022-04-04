@@ -9,7 +9,10 @@
                 <input type="email" name="mail" id="mail" placeholder="Entrez votre mail" required>
 
                 <label for="message"></label>
-                <textarea name="message" id="message" cols="30" rows="10" maxlength="250" placeholder="Votre messsage" required></textarea>
+                <textarea
+                        name="message" id="message" cols="30" rows="10" minlength="20" maxlength="250" placeholder="Votre messsage" required>
+
+                </textarea>
 
                 <div>
                     <button type="submit" name="submit">Envoyer</button>
