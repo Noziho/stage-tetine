@@ -96,8 +96,12 @@ class ProductController extends AbstractController
         ]);
     }
 
-    public function basket(int $p)
+    public function basket(int $p = null)
     {
+        if (null === $p) {
+            header("Location: ?c=home");
+            exit();
+        }
         if (isset($_POST['submit'])) {
             $product = ProductManager::getProductById($p);
             $quantity = $_POST['quantity'];

@@ -9,7 +9,7 @@ class BasketController extends AbstractController
 
     public function index()
     {
-        // TODO: Implement index() method.
+        $this->render('cart/cart');
     }
 
     public function addBasket (int $id, int $p) {

@@ -34,8 +34,9 @@
             else {
                 $user = $_SESSION['user'];
                 /* @var User $user */ ?>
+                <a href="/?c=basket">Panier</a>
                 <a class="responsive-menu" href="/?c=user&a=show-user&id=<?= $user->getId() ?>">Mon profil</a>
-                 <a class="responsive-menu" href="/?c=user&a=disconnect">Déconnexion</a><?php
+                <a class="responsive-menu" href="/?c=user&a=disconnect">Déconnexion</a><?php
             }
         ?>
 
