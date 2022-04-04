@@ -22,4 +22,17 @@ class BasketController extends AbstractController
         $this->render('user/basket');
     }
 
+    /**
+     * @param int $id
+     * @return void
+     */
+    public function deleteCart(int $id)
+    {
+        if(BasketManager::CartExists($id)) {
+            $cart = BasketManager::getBasket($id);
+            $deleted = BasketManager::deleteCart($cart);
+        }
+        $this->index();
+    }
+
 }

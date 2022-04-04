@@ -6,7 +6,7 @@
                 <input type="text" id="name" name="name" placeholder="nom" required>
 
                 <label for="mail"></label>
-                <input type="email" name="mail" id="mail" placeholder="Entrez votre mail">
+                <input type="email" name="mail" id="mail" placeholder="Entrez votre mail" required>
 
                 <label for="message"></label>
                 <textarea name="message" id="message" cols="30" rows="10" maxlength="250" placeholder="Votre messsage" required></textarea>

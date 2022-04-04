@@ -3,6 +3,7 @@
 namespace App\Model\Manager;
 
 
+use App\Model\Entity\Basket;
 use App\Model\Entity\Product;
 use DB_Connect;
 
@@ -26,4 +27,31 @@ class BasketManager  extends AbstractManager
         $stmt->execute();
     }
 
+    public static function CartExists(int $id)
+    {
+        $result = DB_Connect::dbConnect()->query("SELECT count(*) as cnt FROM " . self::TABLE . " WHERE id = $id");
+        return $result ? $result->fetch()['cnt'] : 0;
+    }
+
+    public static function getBasket(int $id): ?Basket
+    {
+        $result = DB_Connect::dbConnect()->query("SELECT * FROM " . self::TABLE . " WHERE id = $id");
+        return $result ? self::makeBasket($result->fetch()) : null;
+    }
+
+    private static function makeBasket(array $data): Basket
+    {
+        return (new Basket())
+            ->setId($data['id'])
+            ->setQuantity($data['quantity']);
+    }
+
+    public static function deleteCart(Basket $basket): bool {
+        if(self::CartExists($basket->getId())) {
+            return DB_Connect::dbConnect()->exec("
+            DELETE FROM " . self::TABLE . " WHERE id = {$basket->getId()}
+        ");
+        }
+        return false;
+    }
 }
