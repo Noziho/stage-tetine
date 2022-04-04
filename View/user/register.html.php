@@ -30,7 +30,7 @@
 
                 <div>
                     <label for="password-repeat">Répétez le mot de passe: </label>
-                    <input type="password" id="password-repeat" name="password-repeat" minlength="7" maxlength="70" required>
+                    <input type="password" id="password-repeat" name="password-repeat" required>
                 </div>
             </div>
 
