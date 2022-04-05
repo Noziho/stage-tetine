@@ -12,15 +12,26 @@ class BasketController extends AbstractController
         $this->render('cart/cart');
     }
 
-    public function addBasket (int $id, int $p) {
+    /* @var User $user */
+    /**
+     * $currentUser = $user->getId();
+     * BasketManager::addProductToBasket($id, $quantity, $p, $currentUser);
+     * $this->render('user/basket');
+     * } **/
 
-        $quantity = filter_var($_POST['quantity'], FILTER_SANITIZE_NUMBER_INT);
-        $user = $_SERVER['user'];
-        /* @var User $user */
-        $currentUser = $user->getId();
-        BasketManager::addProductToBasket($id, $quantity, $p, $currentUser);
-        $this->render('user/basket');
-    }
+    public function deleteCart($id)
+    {
+        foreach ($_SESSION['product'] as $item) {
+            foreach ($item as $product) {
+                if ($product['product']->getId() == $id) {
+                    echo "MAHWII";
+
+                }
+            }
+
+            unset($product['product']);
+            $this->render('cart/cart');
+        }
 
 //    /**
 //     * @param int $id
@@ -35,4 +46,5 @@ class BasketController extends AbstractController
 //        $this->index();
 //    }
 
+    }
 }

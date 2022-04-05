@@ -456,21 +456,39 @@ h2 {
     display: none;
 }
 
-#cartContainer {
-    width: 100%;
-    border: 1px solid black;
+#cartContainer, .emptyCartContainer {
+    width: 60%;
+    display: flex;
+    flex-flow: row wrap;
+    background: #eed6b4;
+    margin-top: 4rem;
+    border-radius: 12px;
+    padding: 3rem;
 }
 
-#cartContainerEmpty {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    background: navajowhite;
+#cartContainer > div {
+    width: 55%;
+
+}
+#delete_cart_product {
+    margin-top: 2rem;
 }
 
 #cartContainer > div > img {
-    width: 5%;
+    width: 20%;
+    text-align: center;
+}
+
+.emptyCartContainer {
+    min-height: 40rem;
+}
+
+.emptyCartContainer > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 2.5rem;
 }
 
 
