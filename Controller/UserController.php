@@ -21,17 +21,9 @@ class UserController extends AbstractController
         }
 
             $mail = trim(filter_var($_POST['mail'], FILTER_SANITIZE_STRING));
-            $strlenOk = strlen($mail) >= 5 && strlen($mail) <=150;
-
             $firstname = trim(filter_var($_POST['firstname'], FILTER_SANITIZE_STRING));
             $lastname = trim(filter_var($_POST['lastname'], FILTER_SANITIZE_STRING));
-            $strlenName = strlen($firstname) >= 2 && strlen($firstname) <= 150 && strlen($lastname) >= 2 &&
-                ($lastname) <= 150 ;
-
             $password = password_hash($_POST['password'], PASSWORD_ARGON2I);
-            $passwordReapeat = trim(filter_var($_POST['password-repeat']));
-            $strlenPassword = strlen($password) >= 7 && strlen($password) <= 70;
-
             $phoneNumber = trim(filter_var($_POST['phone-number'], FILTER_SANITIZE_NUMBER_INT));
             $phoneNumber = (int)$phoneNumber;
             $adress = trim(filter_var($_POST['adress'], FILTER_SANITIZE_STRING));
