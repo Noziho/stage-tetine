@@ -491,7 +491,10 @@ h2 {
     font-size: 2.5rem;
 }
 
-
+#paypal-button-container {
+    margin-top: 2rem;
+    width: 80%;
+}
 
 @keyframes height {
 
