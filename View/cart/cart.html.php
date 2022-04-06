@@ -50,7 +50,12 @@ if (isset($_SESSION['product'])) {
                                 return actions.order.create({
                                     purchase_units: [{
                                         amount: {
-                                            value: '1.5' // Can also reference a variable or function
+                                            value: <?php
+                                            /* @var Product $product */
+                                            if ($product['quantity'] === 2) { ?>
+                                                <p><?= (($product['product']->getprice()*$product['quantity'])-2) ?></p> <?php
+                                            }
+                                             ?>// Can also reference a variable or function
                                         }
                                     }]
                                 });
@@ -86,4 +91,4 @@ else { ?>
         </div>
 
     </div><?php
-}
+};
