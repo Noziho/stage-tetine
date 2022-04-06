@@ -30,9 +30,8 @@ if (isset($_SESSION['product'])) {
                     </button>
                 </div>
 
+                <p>Total de la commande: <?= $product['product']->getprice()*$product['quantity'] ?>€</p>
             </div>
-
-
             <?php
         }
     }?>
