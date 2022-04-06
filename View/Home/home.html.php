@@ -28,7 +28,7 @@
     <div class="swiper mySwiper2">
         <div id="carousel_first" class="swiper-wrapper">
             <div class="swiper-slide">
-                <img src="/assets/img/category/Animaux/animaux(1).jpg"/>
+                <img src="/assets/img/carousel/tetineJJ.png"/>
             </div>
             <div class="swiper-slide">
                 <img src="/assets/img/category/Disney/disney(2).jpg"/>
