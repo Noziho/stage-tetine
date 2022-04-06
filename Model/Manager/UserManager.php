@@ -5,7 +5,7 @@ namespace App\Model\Manager;
 use App\Model\Entity\User;
 use DB_Connect;
 
-class UserManager extends AbstractManager
+class UserManager
 {
     public const TABLE = "mdf58_user";
 

@@ -6,7 +6,7 @@ use App\Model\Entity\Category;
 use App\Model\Entity\Product;
 use DB_Connect;
 
-class CategoryManager extends AbstractManager
+class CategoryManager
 {
     public const TABLE = 'mdf58_category';
 

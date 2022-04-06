@@ -7,7 +7,7 @@ use App\Model\Entity\Basket;
 use App\Model\Entity\Product;
 use DB_Connect;
 
-class BasketManager  extends AbstractManager
+class BasketManager
 {
     private const TABLE = 'mdf58_basket';
 

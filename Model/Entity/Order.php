@@ -4,7 +4,7 @@ namespace App\Model\Entity;
 
 class Order extends AbstractEntity
 {
-    private User $user_fk;
+    private int $user_fk;
 
     /**
      * @return User
@@ -15,13 +15,16 @@ class Order extends AbstractEntity
     }
 
     /**
-     * @param User $user_fk
+     * @param int $user_fk
+     * @return Order
      */
-    public function setUserFk(User $user_fk): self
+    public function setUserFk(int $user_fk): self
     {
         $this->user_fk = $user_fk;
         return $this;
     }
+
+
 
 
 }

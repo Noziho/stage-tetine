@@ -7,7 +7,7 @@ use App\Model\Entity\Product;
 use App\Model\Entity\User;
 use DB_Connect;
 
-class ProductManager extends AbstractManager
+class ProductManager
 {
     public const TABLE = "mdf58_product";
 

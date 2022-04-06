@@ -2,7 +2,10 @@
 
 use App\Model\Entity\Basket;
 use App\Model\Entity\Product;
+use App\Model\Entity\User;
 use App\Model\Manager\CategoryManager;
+use App\Model\Manager\OrderManager;
+use App\Model\Manager\OrderProductManager;
 
 
 if (isset($_SESSION['product'])) {
@@ -59,7 +62,11 @@ if (isset($_SESSION['product'])) {
                                     const transaction = orderData.purchase_units[0].payments.captures[0];
                                     alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
                                     if (transaction.status === "COMPLETED") {
-
+                                        fetch('/?c=orderProduct')
+                                            .then(response => response.json())
+                                            .then(response => {
+                                                console.log(response);
+                                            });
                                     }
                                     // When ready to go live, remove the alert and show a success message within this page. For example:
                                     // const element = document.getElementById('paypal-button-container');

@@ -12,14 +12,15 @@ require __DIR__ . '/Model/Entity/Category.php';
 require __DIR__ . '/Model/Entity/Order.php';
 require __DIR__ . '/Model/Entity/ProductBasket.php';
 
-require __DIR__ . '/Model/Manager/AbstractManager.php';
 require __DIR__ . '/Model/Manager/UserManager.php';
 require __DIR__ . '/Model/Manager/BasketManager.php';
 require __DIR__ . '/Model/Manager/CategoryManager.php';
+require __DIR__ . '/Model/Manager/OrderProductManager.php';
 require __DIR__ . '/Model/Manager/OrderManager.php';
 require __DIR__ . '/Model/Manager/ProductManager.php';
 require __DIR__ . '/Model/Manager/RoleManager.php';
-require __DIR__ . '/Model/Manager/ProductBasketManager.php';
+
+
 
 
 require __DIR__ . '/Controller/AbstractController.php';
@@ -27,8 +28,9 @@ require __DIR__ . '/Controller/UserController.php';
 require __DIR__ . '/Controller/ErrorController.php';
 require __DIR__ . '/Controller/HomeController.php';
 require __DIR__ . '/Controller/CategoryController.php';
-require __DIR__ .'/Controller/ProductController.php';
-require __DIR__ .'/Controller/BasketController.php';
+require __DIR__ . '/Controller/ProductController.php';
+require __DIR__ . '/Controller/BasketController.php';
+require __DIR__ . '/Controller/OrderProductController.php';
 
 
 
