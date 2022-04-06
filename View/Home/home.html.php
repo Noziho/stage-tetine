@@ -28,68 +28,68 @@
     <div class="swiper mySwiper2">
         <div id="carousel_first" class="swiper-wrapper">
             <div class="swiper-slide">
-                <img src="/assets/img/carousel/tetineJJ.png"/>
+                <img src="/assets/img/category/Animaux/animaux(1).png"/>
             </div>
             <div class="swiper-slide">
-                <img src="/assets/img/category/Disney/disney(2).jpg"/>
+                <img src="/assets/img/category/Disney/disney(2).png"/>
             </div>
             <div class="swiper-slide">
-                <img src="/assets/img/category/Frère et Soeur/frereetsoeur(3).jpg"/>
+                <img src="/assets/img/category/Frère et Soeur/frereetsoeur(3).png"/>
             </div>
             <div class="swiper-slide">
-                <img src="/assets/img/category/Drapeaux/drapeau(4).jpg"/>
+                <img src="/assets/img/category/Drapeaux/drapeau(4).png"/>
             </div>
             <div class="swiper-slide">
-                <img src="/assets/img/category/logo divers/logoDivers(5).jpg"/>
+                <img src="/assets/img/category/logo divers/logoDivers(5).png"/>
             </div>
             <div class="swiper-slide">
-                <img src="/assets/img/category/marques/marques(6).jpg"/>
+                <img src="/assets/img/category/marques/marques(15).png"/>
             </div>
             <div class="swiper-slide">
-                <img src="/assets/img/category/marraine parrain/marraineparrain(7).jpg"/>
+                <img src="/assets/img/category/marraine parrain/marraineparrain(7).png"/>
             </div>
             <div class="swiper-slide">
-                <img src="/assets/img/category/Messages/message(8).jpg"/>
+                <img src="/assets/img/category/Messages/message(8).png"/>
             </div>
             <div class="swiper-slide">
-                <img src="/assets/img/category/parents/parents(9).jpg"/>
+                <img src="/assets/img/category/parents/parents(9).png"/>
             </div>
             <div class="swiper-slide">
-                <img src="/assets/img/category/sport/sport(10).jpg"/>
+                <img src="/assets/img/category/sport/sport(10).png"/>
             </div>
         </div>
     </div>
     <div thumbsSlider="" class="swiper mySwiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <img src="/assets/img/category/Animaux/animaux(1).jpg"/>
+                <img src="/assets/img/category/Animaux/animaux(1).png"/>
             </div>
             <div class="swiper-slide">
-                <img src="/assets/img/category/Disney/disney(2).jpg"/>
+                <img src="/assets/img/category/Disney/disney(2).png"/>
             </div>
             <div class="swiper-slide">
-                <img src="/assets/img/category/Frère et Soeur/frereetsoeur(3).jpg"/>
+                <img src="/assets/img/category/Frère et Soeur/frereetsoeur(3).png"/>
             </div>
             <div class="swiper-slide">
-                <img src="/assets/img/category/Drapeaux/drapeau(4).jpg"/>
+                <img src="/assets/img/category/Drapeaux/drapeau(4).png"/>
             </div>
             <div class="swiper-slide">
-                <img src="/assets/img/category/logo divers/logoDivers(5).jpg"/>
+                <img src="/assets/img/category/logo divers/logoDivers(5).png"/>
             </div>
             <div class="swiper-slide">
-                <img src="/assets/img/category/marques/marques(6).jpg"/>
+                <img src="/assets/img/category/marques/marques(6).png"/>
             </div>
             <div class="swiper-slide">
-                <img src="/assets/img/category/marraine parrain/marraineparrain(7).jpg"/>
+                <img src="/assets/img/category/marraine parrain/marraineparrain(7).png"/>
             </div>
             <div class="swiper-slide">
-                <img src="/assets/img/category/Messages/message(8).jpg"/>
+                <img src="/assets/img/category/Messages/message(8).png"/>
             </div>
             <div class="swiper-slide">
-                <img src="/assets/img/category/parents/parents(9).jpg"/>
+                <img src="/assets/img/category/parents/parents(9).png"/>
             </div>
             <div class="swiper-slide">
-                <img src="/assets/img/category/sport/sport(10).jpg"/>
+                <img src="/assets/img/category/sport/sport(10).png"/>
             </div>
         </div>
     </div>

@@ -51,8 +51,6 @@ h1 {
 
 }
 
-
-
 header, footer {
     width: 100%;
     height: 5rem;
@@ -64,7 +62,7 @@ header, footer {
     justify-content: space-between;
 }
 
-header {
+header, footer {
     padding-bottom: 5rem;
 }
 
@@ -327,8 +325,8 @@ label, input {
 
 .swiper-slide img {
     display: block;
-    width: 50%;
-    height: 70%;
+    width: 42%;
+    height: 63%;
 }
 
 #image-container > div > img {
@@ -466,24 +464,49 @@ h2 {
 #cartContainer, .emptyCartContainer {
     width: 60%;
     display: flex;
-    flex-flow: row wrap;
     background: #eed6b4;
     margin-top: 4rem;
     border-radius: 12px;
     padding: 3rem;
 }
 
+#cartContainer {
+    position: relative;
+    padding: 1rem;
+}
+
 #cartContainer > div {
     width: 55%;
-
 }
+
+#details-order {
+    position: absolute;
+    left: 85%;
+    bottom: 1rem;
+}
+
 #delete_cart_product {
     margin-top: 2rem;
 }
 
 #cartContainer > div > img {
-    width: 20%;
+    width: 43%;
     text-align: center;
+    border-radius: 4px;
+}
+
+#cartContainer  p {
+    margin: 0.4rem;
+}
+
+#title-product {
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1rem;
+}
+
+#price {
+    color: #564b4b;
 }
 
 .emptyCartContainer {
