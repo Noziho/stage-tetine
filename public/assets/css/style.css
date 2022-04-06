@@ -493,7 +493,14 @@ h2 {
 
 #paypal-button-container {
     margin-top: 2rem;
-    width: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#paypal-button-container > div {
+    width: 30%;
 }
 
 @keyframes height {
