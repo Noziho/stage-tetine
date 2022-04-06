@@ -99,12 +99,6 @@ ul {
 
 li {
     margin-inline: 2rem;
-    animation: linear;
-    animation-duration: 2s;
-}
-
-li:hover {
-    border-bottom: 1px solid black;
 }
 
 .fa-home {
@@ -150,8 +144,9 @@ main {
 }
 
 .container-image:hover .product-details {
-    animation-name: height;
+    height: 6rem;
 }
+
 
 .container-image > div {
     width: 100%;
@@ -178,8 +173,7 @@ main {
     position: absolute;
     bottom: 0;
     box-shadow: -1px 2px 10px 3px rgba(238, 214, 180, 0.7) inset;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
+    transition: 1s;
 }
 
 .product-details > p {
@@ -533,19 +527,6 @@ h2 {
     width: 30%;
 }
 
-
-@keyframes height {
-
-    from {
-        height: 4rem;
-    }
-
-    to {
-        height: 5.5rem;
-
-    }
-
-}
 
 @media screen and (max-width: 1355px) {
 

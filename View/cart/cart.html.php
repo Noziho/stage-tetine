@@ -1,11 +1,8 @@
 <?php
 
-use App\Model\Entity\Basket;
 use App\Model\Entity\Product;
-use App\Model\Entity\User;
 use App\Model\Manager\CategoryManager;
-use App\Model\Manager\OrderManager;
-use App\Model\Manager\OrderProductManager;
+
 
 
 if (isset($_SESSION['product'])) {
