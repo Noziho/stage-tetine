@@ -41,7 +41,7 @@ if (isset($_SESSION['product'])) {
                     <!-- Set up a container element for the button -->
                     <div id="paypal-button-container"></div>
                     <script>
-                        const cart = document.querySelector('#cartContainer');
+                        const main = document.querySelector('main');
                         const paypalButton = document.querySelector('#paypal-button-container');
                         paypal.Buttons({
                             // Sets up the transaction when a payment button is clicked
@@ -67,8 +67,7 @@ if (isset($_SESSION['product'])) {
                                                 console.log(response);
                                             });
 
-                                        cart.innerHTML = "Transaction effectué";
-                                        cart.style.minHeight = '20rem';
+                                        main.innerHTML =" <div class='emptyCartContainer'>Transaction effectuée vous recevrez votre commande sous 1 semaine</div>";
                                         paypalButton.style.display = 'none';
 
                                     }
