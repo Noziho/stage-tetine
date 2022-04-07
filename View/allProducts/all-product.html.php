@@ -34,7 +34,7 @@ if (isset($data['products'])) {
                     <img class="product-images" src="/assets/img/category/<?= CategoryManager::getCategoryByProduct($product->getId()) ?>/<?=str_replace(' ', '', $product->getImage()) ?>.jpg" alt="">
                     <div class="product-details">
                         <p><?= ucfirst($product->getProductName()) ?></p>
-                        <p>Prix: <?= $product->getPrice() ?>€</p>
+                        <p><?= $product->getPrice() ?>€</p>
                     </div>
                     </a>
                 </div>
