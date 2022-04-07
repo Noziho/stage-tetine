@@ -122,7 +122,7 @@ class ProductController extends AbstractController
                     "font_family" => $font_family
                 ],
             ];
-            $this->render('cart/cart');
+            header("Location: /?c=basket");
         }
     }
 }
