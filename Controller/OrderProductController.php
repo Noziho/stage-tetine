@@ -26,6 +26,8 @@ class OrderProductController extends AbstractController
                 $age = $product['age'];
 
                 OrderProductManager::addOrderProduct($order, $currentProduct, $tips, $font_family, $text_color, $order_quantity, $age);
+                unset($_SESSION['product']);
+                header("Location: ?c=basket");
             }
         }
 
