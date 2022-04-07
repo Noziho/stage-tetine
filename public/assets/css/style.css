@@ -350,6 +350,7 @@ label, input {
     width: 70%;
     background: #eed6b4;
     min-height: 40rem;
+    border-radius: 10px;
 }
 
 #product-container > div {
@@ -477,7 +478,7 @@ h2 {
     display: flex;
     background: #eed6b4;
     margin-top: 4rem;
-    border-radius: 12px;
+    border-radius: 10px;
     padding: 3rem;
 }
 
@@ -557,7 +558,7 @@ h2 {
     width: 43%;
     background: #eed6b4;
     margin-top: 4rem;
-    border-radius: 12px;
+    border-radius: 10px;
     height: 6rem;
     display: flex;
     justify-content: center;
