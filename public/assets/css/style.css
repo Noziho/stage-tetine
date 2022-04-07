@@ -17,7 +17,8 @@ html {
 
 body {
     font-size: 1.6rem;
-    background: whitesmoke;
+    font-family: Quicksand,sans-serif;
+    background: whitesmoke;.
     color: #383838;
 }
 
@@ -471,16 +472,21 @@ h2 {
 
 #cartContainer > div {
     width: 55%;
+    padding: 1rem;
 }
 
 #details-order {
     position: absolute;
-    left: 85%;
-    bottom: 1rem;
+    bottom: 0;
+    right: 10px;
 }
 
 #delete_cart_product {
     margin-top: 2rem;
+}
+
+#cartContainer > div:nth-child(3) {
+    width: auto;
 }
 
 #cartContainer > div > img {
