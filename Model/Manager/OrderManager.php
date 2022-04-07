@@ -23,7 +23,7 @@ class OrderManager
 
     public static function getOrderByUserId (int $id) {
         $query = DB_Connect::dbConnect()->query("
-            SELECT * FROM ". self::TABLE ." WHERE user_fk = $id
+            SELECT * FROM ". self::TABLE ." WHERE user_fk = $id ORDER BY id DESC
         ");
 
         return $query ? self::makeOrder($query->fetch()) : null;
