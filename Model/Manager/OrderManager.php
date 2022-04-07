@@ -12,13 +12,10 @@ class OrderManager
 
 
     public static function addOrder (int $id) {
-        $query = DB_Connect::dbConnect()->query("
-            INSERT INTO ". self::TABLE ." (user_fk)
-            VALUES ($id);
-        ");
+
+        $query = DB_Connect::dbConnect()->query("INSERT INTO ". self::TABLE ." (user_fk)VALUES ($id)");
 
         $query->execute();
-
     }
 
     public static function getOrderByUserId (int $id) {
