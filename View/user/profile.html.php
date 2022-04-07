@@ -7,7 +7,7 @@ $user = $data['profile'];
 
 ?>
 
-<h1 id="title-profile">Mon Profil</h1>
+<h1 id="title-profile"> Mon Profil</h1>
 
 <div id="profile-container">
     <form action="/index.php?c=user&a=edit-user&id=<?= $user->getId() ?>" method="post">
