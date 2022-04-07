@@ -53,7 +53,7 @@ if (isset($_SESSION['product'])) {
                                 return actions.order.create({
                                     purchase_units: [{
                                         amount: {
-                                            value: '1.5'// Can also reference a variable or function
+                                            value: '35.50'// Can also reference a variable or function
                                         }
                                     }]
                                 });

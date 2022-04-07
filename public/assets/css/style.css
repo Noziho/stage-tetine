@@ -215,9 +215,6 @@ main {
     margin-right: 20rem;
 }
 
-#profile-container {
-    margin-top: inherit;
-}
 
 #contact-container, #profile-container {
     width: 70%;
@@ -226,6 +223,11 @@ main {
     background-position: right;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+#profile-container {
+    margin-top: inherit;
+    height: inherit;
 }
 
 #background-login {
@@ -252,7 +254,9 @@ main {
 
 #profile-container input {
     width: 25rem;
-    border-radius: 3rem;
+    border-radius: 1.5rem;
+    border: none;
+    padding: 0.5rem;
 }
 
 label, input {
