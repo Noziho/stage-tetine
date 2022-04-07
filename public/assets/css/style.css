@@ -129,6 +129,7 @@ main {
     left: 0;
     margin-top: 7rem;
     border: 1px solid black;
+    border-radius: 10px;
     background-color: #eed6b4;
     width: 20%;
 }
@@ -161,7 +162,8 @@ main {
 
 .product-images {
     width: 100%;
-    height: 25rem;
+    height: 22rem;
+    border-radius: 10px;
 }
 
 .product-details {
@@ -175,10 +177,21 @@ main {
     bottom: 0;
     box-shadow: -1px 2px 10px 3px rgba(238, 214, 180, 0.7) inset;
     transition: 1s;
+    border-radius: 4px;
+    padding: 0.2rem;
 }
 
 .product-details > p {
     width: 100%;
+}
+
+.product-details > p:nth-child(1) {
+    text-align: center;
+}
+
+.product-details > p:nth-child(2) {
+    color: #383838;
+    text-align: right;
 }
 
 #container-contact {
