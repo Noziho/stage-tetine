@@ -39,8 +39,6 @@ if (isset($_SESSION['product'])) {
     <div id="total-order">
         <p>Total de la commande :</p>
 
-        <p> </p>
-
     </div>
 
      <!-- Replace "test" with your own sandbox Business account app client ID -->

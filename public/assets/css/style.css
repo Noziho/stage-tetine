@@ -220,12 +220,15 @@ main {
 }
 
 #contact-container, #profile-container {
+    display: flex;
     width: 70%;
     height: 50rem;
-    background-image: url("/assets/img/background/background.jpg");
-    background-position: right;
-    background-repeat: no-repeat;
-    background-size: cover;
+    justify-content: center;
+}
+
+#profile-container > #background-login {
+    width: 23%;
+    height: 67%;
 }
 
 #background-login {

@@ -10,6 +10,8 @@ $user = $data['profile'];
 <h1 id="title-profile">Mon Profil</h1>
 
 <div id="profile-container">
+    <img id="background-login" src="/assets/img/background/background-login2.png" alt="">
+
     <form action="/index.php?c=user&a=edit-user&id=<?= $user->getId() ?>" method="post">
         <div id="container-profile">
             <div class="profile">
@@ -47,6 +49,7 @@ $user = $data['profile'];
 
         <a id="account-deletion" href="/index.php?c=user&a=delete-user&id=<?= $user->getId() ?>">Suppression du compte</a>
     </form>
+    <img id="background-login" src="/assets/img/background/background-login2.png" alt="">
 </div>
 
 
