@@ -41,6 +41,8 @@ if (isset($_SESSION['product'])) {
                     <!-- Set up a container element for the button -->
                     <div id="paypal-button-container"></div>
                     <script>
+                        const cart = document.querySelector('#cartContainer');
+                        const paypalButton = document.querySelector('#paypal-button-container');
                         paypal.Buttons({
                             // Sets up the transaction when a payment button is clicked
                             createOrder: (data, actions) => {
@@ -58,13 +60,17 @@ if (isset($_SESSION['product'])) {
                                     // Successful capture! For dev/demo purposes:
                                     console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
                                     const transaction = orderData.purchase_units[0].payments.captures[0];
-                                    alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
                                     if (transaction.status === "COMPLETED") {
                                         fetch('/?c=orderProduct')
                                             .then(response => response.json())
                                             .then(response => {
                                                 console.log(response);
                                             });
+
+                                        cart.innerHTML = "Transaction effectué";
+                                        cart.style.minHeight = '20rem';
+                                        paypalButton.style.display = 'none';
+
                                     }
                                     // When ready to go live, remove the alert and show a success message within this page. For example:
                                     // const element = document.getElementById('paypal-button-container');

@@ -465,6 +465,10 @@ h2 {
     padding: 3rem;
 }
 
+.emptyCartContainer {
+    min-height: 40rem;
+}
+
 #cartContainer {
     position: relative;
     padding: 1rem;
