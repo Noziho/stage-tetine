@@ -30,14 +30,17 @@ if (isset($_SESSION['product'])) {
 
                 <div id="details-order">
                     <p>Quantité: <?= $product['quantity'] ?></p>
-                    <p>Prix: <?= $product['product']->getprice()*$product['quantity'] ?>€</p>
+                    <p class="price-order">Prix: <?= $product['product']->getprice()*$product['quantity'] ?>€</p>
                 </div>
             </div>
             <?php
         }
     }?>
-    <div>
-        <p>Total de la commande</p>
+    <div id="total-order">
+        <p>Total de la commande :</p>
+
+        <p> </p>
+
     </div>
 
      <!-- Replace "test" with your own sandbox Business account app client ID -->

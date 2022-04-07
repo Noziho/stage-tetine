@@ -41,7 +41,7 @@ $user = $data['profile'];
                 <input type="text" name="adress" value="<?= $user->getAddress() ?>">
             </div>
 
-            <input type="submit" name="submit" value="Valider" class="submit-button">
+            <input type="submit" name="submit" value="Modifier" class="submit-button">
 
         </div>
 
