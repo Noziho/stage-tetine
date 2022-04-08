@@ -14,16 +14,22 @@ class ProductController extends AbstractController
         ]);
     }
 
-    public function showProduct(int $id)
+    public function showProduct(int $id = null)
     {
         if (null === $id) {
             header("Location: /index.php?c=home");
+            exit();
         }
 
+        if (ProductManager::productExist($id)) {
+            $this->render('allProducts/product', [
+                'product' => ProductManager::getProductById($id),
+            ]);
+        } else {
+            header("Location: /?c=product");
+            exit();
+        }
 
-        $this->render('allProducts/product', [
-            'product' => ProductManager::getProductById($id),
-        ]);
     }
 
     public function categoryDisney()

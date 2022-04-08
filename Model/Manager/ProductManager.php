@@ -62,6 +62,12 @@ class ProductManager
 
     }
 
+    public static function productExist(int $id)
+    {
+        $query = DB_Connect::dbConnect()->query("SELECT count(*) as cnt FROM " . self::TABLE . " WHERE id = $id");
+        return $query ? $query->fetch()['cnt'] : 0;
+    }
+
     public static function makeProduct (array $data) {
         return (new Product())
             ->setId($data['id'])
