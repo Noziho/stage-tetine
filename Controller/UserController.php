@@ -88,10 +88,15 @@ class UserController extends AbstractController
      * @param int $id
      * @return void
      */
-        public function showUser (int $id)
+        public function showUser (int $id = null)
         {
             if (null === $id) {
                 header('Location: /index.php?c=home');
+            }
+
+            if ($_SESSION['user']->getId() !== $id) {
+                header("Location: /?c=home");
+                exit();
             }
 
             $this->render('user/profile', [
