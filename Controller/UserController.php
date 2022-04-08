@@ -14,11 +14,12 @@ class UserController extends AbstractController
 
     public function register()
     {
-        if (!$this->formIsset
-        ('submit', 'mail', 'firstname', 'lastname', 'password', 'password-repeat',
-            'phone-number', 'adress', 'city', 'postal-code')) {
-            header("Location: /?c=home&f=999999");
-        }
+        if (isset($_POST['submit'])) {
+            if (!$this->formIsset
+            ('mail', 'firstname', 'lastname', 'password', 'password-repeat',
+                'phone-number', 'adress', 'city', 'postal-code')) {
+                header("Location: /?c=user&f=1");
+            }
 
             $mail = trim(filter_var($_POST['mail'], FILTER_SANITIZE_STRING));
             $firstname = trim(filter_var($_POST['firstname'], FILTER_SANITIZE_STRING));
@@ -44,17 +45,19 @@ class UserController extends AbstractController
             ;
 
             if (!filter_var($mail, FILTER_VALIDATE_EMAIL))  {
-                header("Location: /?c=home&f=1221");
+                header("Location: /?c=user&f=2");
             }
 
             if (UserManager::mailExists($mail)) {
-                header("Location: /?c=home&f=14444");
+                header("Location: /?c=home&f=3");
             }
 
             if (UserManager::addUser($user)) {
-                header("Location: /index.php?c=user&a=login");
+                self::login();
             }
-            self::login();
+
+        }
+
         }
 
         public function login () {
