@@ -89,7 +89,6 @@ class UserManager
 
         $stmt->bindParam(':mail', $mail);
 
-
         if ($stmt->execute()) {
             $user = $stmt->fetch();
             if (isset($user['password'])) {

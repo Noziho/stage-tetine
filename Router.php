@@ -45,7 +45,6 @@ class Router
 
     }
 
-
     /**
      * @param AbstractController $controller
      * @param string $method
