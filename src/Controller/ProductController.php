@@ -1,9 +1,8 @@
 <?php
 
-use App\Model\Entity\Product;
-use App\Model\Manager\CategoryManager;
+namespace App\Controller;
+
 use App\Model\Manager\ProductManager;
-use App\Model\Manager\UserManager;
 
 class ProductController extends AbstractController
 {

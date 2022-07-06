@@ -1,8 +1,7 @@
 <?php
 
-use App\Model\Entity\Product;
-use App\Model\Manager\CategoryManager;
-
+use Model\Entity\Product;
+use Model\Manager\CategoryManager;
 
 
 if (isset($_SESSION['product'])) {

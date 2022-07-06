@@ -1,5 +1,10 @@
 <?php
 
+namespace App\Model;
+use Config;
+use PDO;
+use PDOException;
+
 class DB_Connect
 {
 
@@ -27,8 +32,7 @@ class DB_Connect
                 self::$objectPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 self::$objectPDO->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-            }
-            catch (PDOException $e) {
+            } catch (PDOException $e) {
                 echo $e->getMessage();
             }
         }

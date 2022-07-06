@@ -2,7 +2,6 @@
 
 use App\Model\Entity\Product;
 use App\Model\Manager\CategoryManager;
-use App\Model\Manager\ProductManager;
 
 if (isset($data['product'])) {
     $product = $data['product'];

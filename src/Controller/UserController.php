@@ -1,6 +1,7 @@
 <?php
 
-use App\Model\Entity\Role;
+namespace App\Controller;
+
 use App\Model\Entity\User;
 use App\Model\Manager\UserManager;
 

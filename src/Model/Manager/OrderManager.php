@@ -2,9 +2,8 @@
 
 namespace App\Model\Manager;
 
-use App\Model\Entity\Order;
-
-use DB_Connect;
+use App\Model\DB_Connect;
+use Model\Entity\Order;
 
 class OrderManager
 {

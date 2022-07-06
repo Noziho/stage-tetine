@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Controller;
+
 use App\Model\Entity\User;
 use App\Model\Manager\OrderManager;
 use App\Model\Manager\OrderProductManager;
@@ -34,7 +36,7 @@ class OrderProductController extends AbstractController
 
     }
 
-    public function addOrder ()
+    public function addOrder()
     {
         //TODO
     }

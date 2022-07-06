@@ -2,9 +2,9 @@
 
 namespace App\Model\Manager;
 
+use App\Model\DB_Connect;
 use App\Model\Entity\Category;
 use App\Model\Entity\Product;
-use DB_Connect;
 
 class CategoryManager
 {

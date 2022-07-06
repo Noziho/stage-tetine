@@ -1,0 +1,14 @@
+{
+    "name": "noziho/nassima_tetine",
+    "description": "e-commerce website",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "symfony/error-handler": "5.4.x-dev"
+    }
+}

@@ -2,7 +2,7 @@
 
 namespace App\Model\Manager;
 
-use DB_Connect;
+use App\Model\DB_Connect;
 
 class OrderProductManager
 {

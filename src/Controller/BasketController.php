@@ -1,8 +1,8 @@
 <?php
 
-use App\Model\Entity\Product;
+namespace App\Controller;
+
 use App\Model\Entity\User;
-use App\Model\Manager\BasketManager;
 
 class BasketController extends AbstractController
 {

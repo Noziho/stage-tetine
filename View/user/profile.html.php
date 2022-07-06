@@ -1,6 +1,6 @@
 <?php
 
-use App\Model\Entity\User;
+use Model\Entity\User;
 
 /* @var User $user */
 $user = $data['profile'];

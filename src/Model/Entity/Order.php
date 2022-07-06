@@ -7,9 +7,9 @@ class Order extends AbstractEntity
     private int $user_fk;
 
     /**
-     * @return User
+     * @return int
      */
-    public function getUserFk(): User
+    public function getUserFk(): int
     {
         return $this->user_fk;
     }

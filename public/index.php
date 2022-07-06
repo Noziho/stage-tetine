@@ -1,7 +1,16 @@
 <?php
 
+
+require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../Router.php';
+require __DIR__ . '/../src/Model/DB_Connect.php';
+require __DIR__ . '/../Config.php';
+
 use App\Router;
-require __DIR__ . '/../includes.php';
+use Symfony\Component\ErrorHandler\Debug;
+
+
+Debug::enable();
 
 session_start();
 

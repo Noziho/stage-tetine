@@ -2,10 +2,9 @@
 
 namespace App\Model\Manager;
 
-use App\Model\Entity\AbstractEntity;
+
+use App\Model\DB_Connect;
 use App\Model\Entity\Product;
-use App\Model\Entity\User;
-use DB_Connect;
 
 class ProductManager
 {

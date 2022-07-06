@@ -1,4 +1,7 @@
 <?php
+
+namespace App\Controller;
+
 abstract class AbstractController
 {
     abstract public function index();
@@ -8,18 +11,19 @@ abstract class AbstractController
      * @param array $data
      * @return void
      */
-    public function render (string $template, array $data = []) {
+    public function render(string $template, array $data = [])
+    {
         ob_start();
-        require __DIR__ . "/../View/" . $template . ".html.php";
+        require __DIR__ . "/../../View/" . $template . ".html.php";
         $html = ob_get_clean();
-        require __DIR__. "/../View/base.html.php";
+        require __DIR__ . "/../../View/base.html.php";
     }
 
     /**
      * @param ...$inputNames
      * @return bool
      */
-    public function formIsset (...$inputNames): bool
+    public function formIsset(...$inputNames): bool
     {
         foreach ($inputNames as $name) {
             if (!isset($_POST[$name])) {
@@ -36,7 +40,7 @@ abstract class AbstractController
      * @param string $redirect
      * @return void
      */
-    public function checkRange (string $value, int $min, int $max, string $redirect): void
+    public function checkRange(string $value, int $min, int $max, string $redirect): void
     {
         if (strlen($value) < $min || strlen($value) > $max) {
             header("Location: " . $redirect);
@@ -49,12 +53,11 @@ abstract class AbstractController
      * @param string $password_repeat
      * @return bool
      */
-    public function checkPassword(string $password, string $password_repeat):bool
+    public function checkPassword(string $password, string $password_repeat): bool
     {
         if ($password !== $password_repeat) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }

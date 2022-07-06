@@ -1,9 +1,7 @@
 <?php
 
 
-use App\Model\Entity\AbstractEntity;
-use App\Model\Entity\Basket;
-use App\Model\Entity\Product;
+namespace App\Model\Entity;
 
 class ProductBasket extends AbstractEntity
 {

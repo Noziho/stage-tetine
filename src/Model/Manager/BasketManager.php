@@ -3,9 +3,7 @@
 namespace App\Model\Manager;
 
 
-use App\Model\Entity\Basket;
-use App\Model\Entity\Product;
-use DB_Connect;
+use App\Model\DB_Connect;
 
 class BasketManager
 {

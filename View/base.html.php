@@ -26,7 +26,7 @@
 
         <a class="responsive-menu" href="/?c=product">Nos produits</a><?php
 
-        use App\Model\Entity\User;
+        use Model\Entity\User;
 
         if (!isset($_SESSION['user'])) {?>
                 <span class="responsive-menu"><a href="/?c=user&a=login">Login</a>/<a href="/?c=user">Inscription</a></span><?php

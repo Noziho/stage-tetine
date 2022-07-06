@@ -1,8 +1,6 @@
 <?php
 
-use App\Model\Entity\AbstractEntity;
-use App\Model\Entity\Order;
-use App\Model\Entity\Product;
+namespace App\Model\Entity;
 
 class OrderProduct extends AbstractEntity
 {
