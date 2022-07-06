@@ -26,15 +26,15 @@
 
         <a class="responsive-menu" href="/?c=product">Nos produits</a><?php
 
-        use Model\Entity\User;
+        use App\Model\Entity\User;
 
         if (!isset($_SESSION['user'])) {?>
-                <span class="responsive-menu"><a href="/?c=user&a=login">Login</a>/<a href="/?c=user">Inscription</a></span><?php
+                <span class="responsive-menu"><a href="/?c=user&a=login">Login</a>/<a href="/?c=user&a=register">Inscription</a></span><?php
             }
             else {
                 $user = $_SESSION['user'];
                 /* @var User $user */ ?>
-                <a href="/?c=basket">Panier</a>
+                <a href="/?c=cart">Panier</a>
                 <a class="responsive-menu" href="/?c=user&a=show-user&id=<?= $user->getId() ?>">Mon profil</a>
                 <a class="responsive-menu" href="/?c=user&a=disconnect">Déconnexion</a><?php
             }
@@ -52,8 +52,8 @@
     </div>
 
     <div id="bottom">
-    <a href="/?c=user&a=save-form">Contact</a>
-    <a href="/?c=form&a=confidentiality">Confidentialité</a>
+    <a href="/?c=user&a=contact-us">Contact</a>
+    <a href="/?c=user&a=confidentiality">Confidentialité</a>
     </div>
 </footer>
 

@@ -10,11 +10,13 @@ class UserController extends AbstractController
 
     public function index()
     {
-        $this->render('user/register');
+        $this->render('home/home');
     }
 
     public function register()
     {
+        $this->render('user/register');
+
         if (isset($_POST['submit'])) {
             if (!$this->formIsset
             ('mail', 'firstname', 'lastname', 'password', 'password-repeat',
@@ -137,12 +139,13 @@ class UserController extends AbstractController
 
     }
 
-    public function saveForm()
+    //TODO: Check if it works
+    public function contactUs()
     {
         if (isset($_POST['mail'])) {
-            $name = trim(strip_tags($_POST['name']));
-            $message = trim(strip_tags($_POST['message']));
-            $userMail = trim(strip_tags($_POST['mail']));
+            $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+            $message = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
+            $userMail = filter_var($_POST['mail'], FILTER_SANITIZE_STRING);
 
             $to = 'dehainaut.angelique@orange.fr';
             $subject = "Vous avez un message";
@@ -157,11 +160,15 @@ class UserController extends AbstractController
                     } else {
                         $_SESSION['mail'] = "mail-error";
                     }
-                    header('Location: /index.php?c=user&a=save-form');
+                    header('Location: /?c=user&a=contact-us');
                 }
             }
         } else {
-            $this->render('form/contact');
+            $this->render('about/contact');
         }
+    }
+
+    public function confidentiality () {
+        $this->render('about/confidentiality');
     }
 }

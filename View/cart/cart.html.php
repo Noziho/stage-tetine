@@ -1,7 +1,7 @@
 <?php
 
-use Model\Entity\Product;
-use Model\Manager\CategoryManager;
+use App\Model\Entity\Product;
+use App\Model\Manager\CategoryManager;
 
 
 if (isset($_SESSION['product'])) {
@@ -23,7 +23,7 @@ if (isset($_SESSION['product'])) {
                     <p><?= $product['tips'] ?></p>
                     <p id="price"><?= $product['product']->getprice() ?>€</p>
                     <button class="submit-button" id="delete_cart_product"><a
-                                href="/index.php?c=basket&a=delete-cart&id=<?= $product['product']->getId() ?>">Supprimer</a>
+                                href="/index.php?c=cart&a=delete-cart&id=<?= $product['product']->getId() ?>">Supprimer</a>
                     </button>
                 </div>
 

@@ -2,7 +2,7 @@
 
 namespace App\Model\Entity;
 
-class Basket extends AbstractEntity
+class Cart extends AbstractEntity
 {
 
     private int $quantity;
@@ -17,7 +17,7 @@ class Basket extends AbstractEntity
 
     /**
      * @param int $quantity
-     * @return Basket
+     * @return Cart
      */
     public function setQuantity(int $quantity): self
     {

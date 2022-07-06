@@ -8,9 +8,7 @@ class ProductController extends AbstractController
 {
     public function index()
     {
-        $this->render('allProducts/all-product', [
-            'products' => ProductManager::getAll(),
-        ]);
+        $this->categoryDisney();
     }
 
     public function showProduct(int $id = null)
@@ -21,7 +19,7 @@ class ProductController extends AbstractController
         }
 
         if (ProductManager::productExist($id)) {
-            $this->render('allProducts/product', [
+            $this->render('product/product', [
                 'product' => ProductManager::getProductById($id),
             ]);
         } else {
@@ -101,7 +99,7 @@ class ProductController extends AbstractController
         ]);
     }
 
-    public function basket(int $p = null)
+    public function addProductToCart(int $p = null)
     {
         if (null === $p) {
             header("Location: ?c=home");
@@ -127,7 +125,7 @@ class ProductController extends AbstractController
                     "font_family" => $font_family
                 ],
             ];
-            header("Location: /?c=basket");
+            header("Location: /?c=cart");
         }
     }
 }

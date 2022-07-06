@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Model\Entity\User;
 
-class BasketController extends AbstractController
+class CartController extends AbstractController
 {
 
     public function index()
@@ -15,22 +15,24 @@ class BasketController extends AbstractController
     /* @var User $user */
     /**
      * $currentUser = $user->getId();
-     * BasketManager::addProductToBasket($id, $quantity, $p, $currentUser);
+     * CartManager::addProductToCart($id, $quantity, $p, $currentUser);
      * $this->render('user/basket');
      * } **/
 
+
+    //TODO: Need to be fix for delete product on cart one by one, not all at the same time.
     public function deleteCart($id)
     {
         foreach ($_SESSION['product'] as $item) {
             foreach ($item as $product) {
                 if ($product['product']->getId() == $id) {
-                    echo "MAHWII";
-
+                    unset($_SESSION['product']);
                 }
             }
 
-            unset($product['product']);
-            $this->render('cart/cart');
+            header("Location: /?c=cart");
+            unset($_SESSION['product']);
+            exit();
         }
 
 //    /**
@@ -39,9 +41,9 @@ class BasketController extends AbstractController
 //     */
 //    public function deleteCart(int $id)
 //    {
-//        if(BasketManager::CartExists($id)) {
-//            $cart = BasketManager::getBasket($id);
-//            $deleted = BasketManager::deleteCart($cart);
+//        if(CartManager::CartExists($id)) {
+//            $cart = CartManager::getBasket($id);
+//            $deleted = CartManager::deleteCart($cart);
 //        }
 //        $this->index();
 //    }

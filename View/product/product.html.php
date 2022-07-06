@@ -52,7 +52,7 @@ if (isset($data['product'])) {
                         href="/?c=user&a=login">vous connecter</a></span>
         </p><?php
     } else { ?>
-    <form action="/?c=product&a=basket&p=<?= $product->getId() ?>"
+    <form action="/?c=product&a=addProductToCart&p=<?= $product->getId() ?>"
           method="post">
             <label for="quantity">Quantité: </label>
             <select name="quantity" id="quantity">
