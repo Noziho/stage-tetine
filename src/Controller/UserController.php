@@ -15,7 +15,6 @@ class UserController extends AbstractController
 
     public function register()
     {
-        $this->render('user/register');
 
         if (isset($_POST['submit'])) {
             if (!$this->formIsset
@@ -48,17 +47,21 @@ class UserController extends AbstractController
 
             if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
                 header("Location: /?c=user&f=2");
+                exit();
             }
 
             if (UserManager::mailExists($mail)) {
                 header("Location: /?c=home&f=3");
+                exit();
             }
 
             if (UserManager::addUser($user)) {
-                self::login();
+                header('Location: /?c=user&a=login&f=0');
+                exit();
             }
 
         }
+        $this->render('user/register');
 
     }
 
@@ -67,6 +70,7 @@ class UserController extends AbstractController
         if (isset($_POST['submit'])) {
             if (!$this->formIsset('mail', 'password')) {
                 header("Location: /?home&f=1");
+                exit();
             }
 
             $mail = filter_var($_POST['mail'], FILTER_SANITIZE_STRING);
@@ -95,6 +99,7 @@ class UserController extends AbstractController
     {
         if (null === $id) {
             header('Location: /index.php?c=home');
+            exit();
         }
 
         if ($_SESSION['user']->getId() !== $id) {

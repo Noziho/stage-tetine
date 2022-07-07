@@ -21,13 +21,14 @@ class OrderProductController extends AbstractController
             foreach ($item as $product) {
 
                 $currentProduct = $product['product'];
+                $name = $product['firstname'];
                 $tips = $product['tips'];
                 $font_family = $product['font_family'];
                 $text_color = $product['color'];
                 $order_quantity = $product['quantity'];
                 $age = $product['age'];
 
-                OrderProductManager::addOrderProduct($order, $currentProduct, $tips, $font_family, $text_color, $order_quantity, $age);
+                OrderProductManager::addOrderProduct($order, $currentProduct, $name, $tips, $font_family, $text_color, $order_quantity, $age);
                 unset($_SESSION['product']);
 
             }

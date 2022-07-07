@@ -3,7 +3,7 @@
 namespace App\Model\Manager;
 
 use App\Model\DB_Connect;
-use Model\Entity\Order;
+use App\Model\Entity\Order;
 
 class OrderManager
 {

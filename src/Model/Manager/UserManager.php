@@ -113,9 +113,11 @@ class UserManager
                     header("Location: /?c=home&f=0");
                 } else {
                     header("Location: /?c=user&a=login&f=10");
+                    exit();
                 }
             } else {
                 header("Location: /?c=user&a=login&f=12");
+                exit();
             }
         }
     }
