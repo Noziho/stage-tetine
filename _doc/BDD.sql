@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 07 juil. 2022 à 09:09
+-- Généré le : jeu. 07 juil. 2022 à 13:49
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -59,13 +59,66 @@ INSERT INTO `mdf58_category` (`id`, `name`) VALUES
 DROP TABLE IF EXISTS `mdf58_order`;
 CREATE TABLE IF NOT EXISTS `mdf58_order` (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `basket_fk` int(11) NOT NULL,
   `user_fk` int(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
-  KEY `fk_mdf58_order_mdf58_basket1_idx` (`basket_fk`),
   KEY `fk_mdf58_order_mdf58_user1_idx` (`user_fk`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `mdf58_order`
+--
+
+INSERT INTO `mdf58_order` (`id`, `user_fk`) VALUES
+(1, 4),
+(2, 4),
+(3, 4),
+(4, 4),
+(5, 4),
+(6, 4),
+(7, 4),
+(8, 4),
+(9, 4),
+(10, 4),
+(11, 4),
+(12, 4),
+(13, 4),
+(14, 4),
+(15, 4),
+(16, 4);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `mdf58_order_product`
+--
+
+DROP TABLE IF EXISTS `mdf58_order_product`;
+CREATE TABLE IF NOT EXISTS `mdf58_order_product` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `order_fk` int(10) UNSIGNED NOT NULL,
+  `product_fk` int(10) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `tips` varchar(45) NOT NULL,
+  `font_family` varchar(45) NOT NULL,
+  `text_color` varchar(45) NOT NULL,
+  `order_quantity` varchar(45) NOT NULL,
+  `age` int(10) UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_mdf58_order_has_mdf58_product_mdf58_order1_idx` (`order_fk`),
+  KEY `fk_order_product_mdf58_product1_idx` (`product_fk`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `mdf58_order_product`
+--
+
+INSERT INTO `mdf58_order_product` (`id`, `order_fk`, `product_fk`, `name`, `tips`, `font_family`, `text_color`, `order_quantity`, `age`) VALUES
+(1, 6, 1, '', 'Anatomique', 'Police d\'écriture 1', 'Rose', '1', 6),
+(2, 8, 2, '', 'Anatomique', 'Police d\'écriture 1', 'Rose', '1', 36),
+(3, 10, 6, '', 'Anatomique', 'Police d\'écriture 1', 'Rose', '1', 6),
+(4, 14, 1, 'Jean', 'Anatomique', 'Police d\'écriture 1', 'Rose', '1', 6),
+(5, 16, 10, 'Elza', 'Anatomique', 'Police d\'écriture 1', 'Rose', '1', 6);
 
 -- --------------------------------------------------------
 
@@ -929,28 +982,24 @@ CREATE TABLE IF NOT EXISTS `mdf58_user` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   UNIQUE KEY `email_UNIQUE` (`email`),
   KEY `fk_mdf58_user_mdf58_role_idx` (`role_fk`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
 --
--- Structure de la table `order_product`
+-- Déchargement des données de la table `mdf58_user`
 --
 
-DROP TABLE IF EXISTS `order_product`;
-CREATE TABLE IF NOT EXISTS `order_product` (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `order_fk` int(10) UNSIGNED NOT NULL,
-  `product_fk` int(10) UNSIGNED NOT NULL,
-  `tips` varchar(45) NOT NULL,
-  `font_family` varchar(45) NOT NULL,
-  `text_color` varchar(45) NOT NULL,
-  `order_quantity` varchar(45) NOT NULL,
-  `age` int(10) UNSIGNED NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_mdf58_order_has_mdf58_product_mdf58_product1_idx` (`product_fk`),
-  KEY `fk_mdf58_order_has_mdf58_product_mdf58_order1_idx` (`order_fk`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO `mdf58_user` (`id`, `firstname`, `lastname`, `email`, `phone_number`, `password`, `city`, `postal_code`, `adress`, `role_fk`) VALUES
+(4, 'Noah', 'Decroix', 'noah.decroix3@gmail.com', 633990253, '$argon2i$v=19$m=65536,t=4,p=1$a09HSjdqeGUwZ3lHZ2phYg$HIfxvY0Ry/OkFrNcscujRNFTjrzwK70dWNWAU2p8Zn8', 'Bavay', '59570', '7 résidence Osaka', 1),
+(7, 'Azerty', 'fzfzefezfz', 'ededed@gmai.com', 633990253, '$argon2i$v=19$m=65536,t=4,p=1$NG1wT1pwYzVucmsxUUZabQ$arjkzekGafsY0oAImPyPbLn22cOihYU09k6PxYB+Oyg', 'Bavay', '59570', '7 résidence Osaka', 1),
+(9, 'Noah', 'blabla', 'yauzietjok@gmail.com', 633990253, '$argon2i$v=19$m=65536,t=4,p=1$bGw1MWNJYWJIVkdZWmpMVw$gQCQQzWao2++OcrUuA6kGWXKVoivw69HhWwQXhi+VYg', 'Locquignol', '59570', '7 résidence Osaka', 1),
+(11, 'blabla', 'izjfeizejfjizejf', 'noah.decroix3@ggmail.com', 633990253, '$argon2i$v=19$m=65536,t=4,p=1$czVyYnM1WGpaU0pOVi9JSw$tnelbwsIjmicjPCWtUZ61WvKGutAgRtAHMg+4A14jU0', 'ozfkoezkfo', '59570', '7 résidence Osaka', 1),
+(12, 'Noah', 'Decroix', 'Noziho@gmail.com', 633990253, '$argon2i$v=19$m=65536,t=4,p=1$MGR0dXU3VXU3L01zeDhrNw$eT8+cWmEIaVmu4+9HoXdHJ0QWHwzF1pM91j8nNwTxNg', 'Bavay', '59570', '7 résidence Osaka', 1),
+(13, 'dededzd', 'ozkdokzodozekdo', 'Yskaa59570@gmail.com', 633990253, '$argon2i$v=19$m=65536,t=4,p=1$eWpwekxqODdaek4wdnlDYQ$OdNxh+qHO/AT1eUhsel4IPAczdil5AU6I5VpOIkxAts', 'Bavay', '59530', 'MF du quesnes au leu', 1),
+(14, 'Noah', 'Qwerty', 'fezjfiiezjfiz@gmail.com', 633990253, '$argon2i$v=19$m=65536,t=4,p=1$MEFPMjZxQy4xaG95cVFJVQ$G1XDmJRkAQX4YYShQYKjct9ger5u+8hSmkBvhZFWTxY', 'Bavay', '59570', '7 résidence Osaka', 1),
+(15, 'dede', 'dedede', 'yauzietjodeek@gmail.com', 633990253, '$argon2i$v=19$m=65536,t=4,p=1$TW92MVBnd2ZnakFnU2o0Nw$MR/ogW30prBDF91C05HeULGloW/xS9NbpPTY97EaYQI', 'Bavay', '59570', '7 résidence Osakaa', 1),
+(16, 'dede', 'zdzedzfzfzefze', 'yaededuzietjok@gmail.com', 633990253, '$argon2i$v=19$m=65536,t=4,p=1$RGpWaG9rQ2dkZWhIN2Rzaw$6kXBO/ooN+t1FvIrKzxRBX9jNgK0PvsLrBsXdcD8650', 'Bavay', '59570', '7 résidence Osaka', 1),
+(17, 'dede', 'dedede', 'zfzfzfzfzfz@gmail.com', 633990253, '$argon2i$v=19$m=65536,t=4,p=1$b01vRzJ3NW52UHNOV0U4bA$CgqqqNqXIi1cuXYoJzUUQMoAwNzbIPL8ywQBV8YDnWY', 'Bavay', '59570', '7 résidence Osaka', 1),
+(18, 'dede', 'Decroix', 'yauzieteeeeejok@gmail.com', 633990253, '$argon2i$v=19$m=65536,t=4,p=1$QVJ4bDBjNnN3WjY0ajhMWA$Bf7EoeCOyLsIlR2wewWgn/EA0Hpk27PCIAIcPtd65ww', 'Bavay', '59570', '7 résidence Osaka', 1);
 
 --
 -- Contraintes pour les tables déchargées
@@ -960,8 +1009,14 @@ CREATE TABLE IF NOT EXISTS `order_product` (
 -- Contraintes pour la table `mdf58_order`
 --
 ALTER TABLE `mdf58_order`
-  ADD CONSTRAINT `fk_mdf58_order_mdf58_basket1` FOREIGN KEY (`basket_fk`) REFERENCES `stage`.`mdf58_basket` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_mdf58_order_mdf58_user1` FOREIGN KEY (`user_fk`) REFERENCES `mdf58_user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Contraintes pour la table `mdf58_order_product`
+--
+ALTER TABLE `mdf58_order_product`
+  ADD CONSTRAINT `fk_mdf58_order_has_mdf58_product_mdf58_order1` FOREIGN KEY (`order_fk`) REFERENCES `mdf58_order` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_order_product_mdf58_product1` FOREIGN KEY (`product_fk`) REFERENCES `mdf58_product` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Contraintes pour la table `mdf58_product`
@@ -974,13 +1029,6 @@ ALTER TABLE `mdf58_product`
 --
 ALTER TABLE `mdf58_user`
   ADD CONSTRAINT `fk_mdf58_user_mdf58_role` FOREIGN KEY (`role_fk`) REFERENCES `mdf58_role` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Contraintes pour la table `order_product`
---
-ALTER TABLE `order_product`
-  ADD CONSTRAINT `fk_mdf58_order_has_mdf58_product_mdf58_order1` FOREIGN KEY (`order_fk`) REFERENCES `mdf58_order` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_mdf58_order_has_mdf58_product_mdf58_product1` FOREIGN KEY (`product_fk`) REFERENCES `mdf58_product` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
